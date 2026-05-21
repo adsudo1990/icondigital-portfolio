@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    /* ========== TOKENS (mismos que index.html) ========== */
+    /* ========== TOKENS ========== */
     :root {
       --dark:   #303030;
       --rose:   #dc7090;
@@ -138,7 +138,7 @@
       margin: 0 auto 2rem auto;
     }
 
-    /* MASONRY GRID - 3 columnas fijas */
+    /* MASONRY GRID */
     .masonry-grid {
       column-count: 3;
       column-gap: 1.5rem;
@@ -206,34 +206,40 @@
       justify-content: center;
     }
 
-    /* MODAL - versión corregida */
+    /* MODAL CON NAVEGACIÓN */
     .modal {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.95);
+      background: rgba(0, 0, 0, 0.96);
       z-index: 2000;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      padding: 1rem;
       backdrop-filter: blur(8px);
       cursor: pointer;
     }
     .modal.active {
       display: flex;
     }
-    .modal-content {
-      max-width: 90vw;
-      max-height: 85vh;
+    .modal-container {
       position: relative;
+      max-width: 90vw;
+      max-height: 90vh;
       cursor: default;
+    }
+    .modal-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50vh;
     }
     .modal-content img,
     .modal-content iframe {
-      width: auto;
-      max-width: 100%;
-      height: auto;
+      max-width: 85vw;
       max-height: 80vh;
+      width: auto;
+      height: auto;
       object-fit: contain;
       border-radius: 16px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
@@ -250,8 +256,8 @@
       background: rgba(0, 0, 0, 0.6);
       border: 2px solid rgba(255, 255, 255, 0.3);
       border-radius: 50%;
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       color: white;
       font-size: 1.8rem;
       cursor: pointer;
@@ -259,49 +265,59 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      z-index: 10;
     }
     .modal-close:hover {
       background: var(--rose);
       border-color: var(--rose);
       transform: scale(1.1);
     }
-    .modal-caption {
+    .modal-nav {
       position: absolute;
-      bottom: -40px;
-      left: 0;
-      right: 0;
-      text-align: center;
-      color: rgba(255, 255, 255, 0.8);
-      font-size: 0.85rem;
-      font-family: var(--ff-b);
-      font-weight: 500;
-    }
-
-    /* Filtros */
-    .filter-bar {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-    .filter-btn {
-      background: transparent;
-      border: 1px solid rgba(48,48,48,0.2);
-      padding: 0.5rem 1.2rem;
-      border-radius: 40px;
-      font-family: var(--ff-b);
-      font-size: 0.85rem;
-      font-weight: 500;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      color: white;
+      font-size: 1.4rem;
       cursor: pointer;
-      transition: var(--tr);
-      color: var(--dark);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      backdrop-filter: blur(4px);
     }
-    .filter-btn:hover,
-    .filter-btn.active {
+    .modal-nav:hover {
       background: var(--rose);
       border-color: var(--rose);
-      color: white;
+      transform: translateY(-50%) scale(1.08);
+    }
+    .modal-prev {
+      left: -60px;
+    }
+    .modal-next {
+      right: -60px;
+    }
+    .modal-caption {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.9rem;
+      font-family: var(--ff-b);
+      font-weight: 500;
+      margin-top: 20px;
+      padding: 0 20px;
+    }
+    .modal-counter {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.75rem;
+      font-family: var(--ff-b);
+      margin-top: 8px;
+      letter-spacing: 0.5px;
     }
 
     /* Marcas */
@@ -390,14 +406,19 @@
       section { padding: 3rem 0; }
       .masonry-grid { column-count: 1; }
       .brands-grid { grid-template-columns: repeat(2, 1fr); }
-      .filter-bar { gap: 0.4rem; }
-      .filter-btn { padding: 0.4rem 1rem; font-size: 0.75rem; }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-socials { justify-content: center; }
+      .modal-nav { width: 36px; height: 36px; font-size: 1rem; }
+      .modal-prev { left: -20px; }
+      .modal-next { right: -20px; }
+      .modal-close { top: -45px; right: -5px; width: 36px; height: 36px; font-size: 1.5rem; }
       .modal-content iframe { width: 95vw; height: 54vw; }
     }
     @media (max-width: 480px) {
       .brands-grid { grid-template-columns: 1fr; }
+      .modal-nav { width: 32px; height: 32px; font-size: 0.9rem; }
+      .modal-prev { left: -10px; }
+      .modal-next { right: -10px; }
     }
 
     /* Reveal */
@@ -447,36 +468,29 @@
       <p class="section-desc">Sesiones de producto, lifestyle y retrato que detienen el scroll.</p>
     </div>
 
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all" data-section="foto">Todo</button>
-      <button class="filter-btn" data-filter="producto" data-section="foto">Producto</button>
-      <button class="filter-btn" data-filter="lifestyle" data-section="foto">Lifestyle</button>
-      <button class="filter-btn" data-filter="retrato" data-section="foto">Retrato</button>
-    </div>
-
     <div class="masonry-grid" id="foto-grid">
-      <div class="masonry-item" data-category="producto">
-        <img src="images/serv-foto.jpg" alt="Sesión de producto" loading="lazy">
+      <div class="masonry-item">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-1.jpg" alt="Sesión de producto" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Producto</span><h4>Crema Natural</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="lifestyle">
-        <img src="images/serv-foto.jpg" alt="Marca en contexto" loading="lazy">
+      <div class="masonry-item">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-2.jpg" alt="Marca en contexto" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Lifestyle</span><h4>Slow Sunday</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="retrato">
-        <img src="images/serv-foto.jpg" alt="Retrato profesional" loading="lazy">
+      <div class="masonry-item">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-3.jpg" alt="Retrato profesional" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Retrato</span><h4>CEO Session</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="producto">
-        <img src="images/serv-foto.jpg" alt="Packaging" loading="lazy">
+      <div class="masonry-item">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-4.jpg" alt="Packaging" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Producto</span><h4>Caja Orgánica</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="lifestyle">
-        <img src="images/serv-foto.jpg" alt="Estilo de vida" loading="lazy">
+      <div class="masonry-item">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-5.jpg" alt="Estilo de vida" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Lifestyle</span><h4>Café Matutino</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="retrato">
-        <img src="images/serv-foto.jpg" alt="Retrato artístico" loading="lazy">
+      <div class="masonry-item">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-6.jpg" alt="Retrato artístico" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Retrato</span><h4>Mood & Light</h4><i class="fas fa-expand"></i></div>
       </div>
     </div>
@@ -492,35 +506,28 @@
       <p class="section-desc">Reels, stories y posts que cuentan tu historia con autenticidad.</p>
     </div>
 
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all" data-section="contenido">Todo</button>
-      <button class="filter-btn" data-filter="reels" data-section="contenido">Reels</button>
-      <button class="filter-btn" data-filter="stories" data-section="contenido">Stories</button>
-      <button class="filter-btn" data-filter="posts" data-section="contenido">Posts</button>
-    </div>
-
     <div class="masonry-grid" id="contenido-grid">
-      <div class="masonry-item" data-category="reels">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Reel producto" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Reels</span><h4>Lanzamiento</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="stories">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Story interactiva" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Stories</span><h4>Encuesta</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="posts">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Post feed" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Posts</span><h4>Tips diseño</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="reels">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Reel detrás" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Reels</span><h4>Making of</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="stories">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Story promoción" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Stories</span><h4>Oferta</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="posts">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Post carrusel" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Posts</span><h4>Tutorial</h4><i class="fas fa-expand"></i></div>
       </div>
@@ -537,35 +544,28 @@
       <p class="section-desc">Identidades visuales, sitios web y materiales que convierten.</p>
     </div>
 
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all" data-section="diseno">Todo</button>
-      <button class="filter-btn" data-filter="branding" data-section="diseno">Branding</button>
-      <button class="filter-btn" data-filter="web" data-section="diseno">Diseño Web</button>
-      <button class="filter-btn" data-filter="packaging" data-section="diseno">Packaging</button>
-    </div>
-
     <div class="masonry-grid" id="diseno-grid">
-      <div class="masonry-item" data-category="branding">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Identidad visual" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Branding</span><h4>Marca Verde</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="web">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Landing page" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Diseño Web</span><h4>E-commerce</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="packaging">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Packaging" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Packaging</span><h4>Caja Premium</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="branding">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Papelería" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Branding</span><h4>Papelería</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="web">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="App diseño" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Diseño Web</span><h4>App móvil</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="packaging">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Packaging ecológico" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Packaging</span><h4>Eco Box</h4><i class="fas fa-expand"></i></div>
       </div>
@@ -582,35 +582,28 @@
       <p class="section-desc">Postproducción profesional para redes y comerciales.</p>
     </div>
 
-    <div class="filter-bar">
-      <button class="filter-btn active" data-filter="all" data-section="video">Todo</button>
-      <button class="filter-btn" data-filter="corporativo" data-section="video">Corporativo</button>
-      <button class="filter-btn" data-filter="social" data-section="video">Social Media</button>
-      <button class="filter-btn" data-filter="evento" data-section="video">Eventos</button>
-    </div>
-
     <div class="masonry-grid" id="video-grid">
-      <div class="masonry-item" data-category="corporativo">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Video corporativo" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Corporativo</span><h4>Presentación</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="social">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Social clip" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Social Media</span><h4>Clip Viral</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="evento">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Evento" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Eventos</span><h4>Lanzamiento</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="corporativo">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Video institucional" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Corporativo</span><h4>Brand Film</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="social">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Short form" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Social Media</span><h4>Short Ad</h4><i class="fas fa-expand"></i></div>
       </div>
-      <div class="masonry-item" data-category="evento">
+      <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Evento corporativo" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Eventos</span><h4>Aftermovie</h4><i class="fas fa-expand"></i></div>
       </div>
@@ -688,12 +681,17 @@
 
 <a id="scroll-top" href="#" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></a>
 
-<!-- MODAL LIGHTBOX -->
+<!-- MODAL LIGHTBOX CON NAVEGACIÓN -->
 <div id="lightbox-modal" class="modal">
-  <div class="modal-content">
+  <div class="modal-container">
     <button class="modal-close">&times;</button>
-    <div id="modal-media"></div>
+    <button class="modal-nav modal-prev"><i class="fas fa-chevron-left"></i></button>
+    <button class="modal-nav modal-next"><i class="fas fa-chevron-right"></i></button>
+    <div class="modal-content">
+      <div id="modal-media"></div>
+    </div>
     <div class="modal-caption" id="modal-caption"></div>
+    <div class="modal-counter" id="modal-counter"></div>
   </div>
 </div>
 
@@ -809,83 +807,120 @@
   window.addEventListener('scroll', () => { scrollBtn.style.display = window.scrollY > 320 ? 'flex' : 'none'; });
   scrollBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-  // MODAL LIGHTBOX - Versión corregida
+  // ========== MODAL CON GALERÍA Y NAVEGACIÓN ==========
   const modal = document.getElementById('lightbox-modal');
   const modalMedia = document.getElementById('modal-media');
   const modalCaption = document.getElementById('modal-caption');
+  const modalCounter = document.getElementById('modal-counter');
   const modalClose = document.querySelector('.modal-close');
+  const modalPrev = document.querySelector('.modal-prev');
+  const modalNext = document.querySelector('.modal-next');
   
-  function openModal(mediaElement, title, category) {
+  let currentItems = [];
+  let currentIndex = 0;
+  let currentService = '';
+  
+  function getVisibleItemsFromSection(sectionId) {
+    const grid = document.getElementById(`${sectionId}-grid`);
+    if (!grid) return [];
+    const items = [];
+    grid.querySelectorAll('.masonry-item').forEach(item => {
+      const img = item.querySelector('img');
+      const title = item.querySelector('.item-overlay h4')?.innerText || 'Proyecto';
+      const category = item.querySelector('.item-cat')?.innerText || 'Trabajo';
+      if (img) {
+        items.push({ imgSrc: img.src, alt: img.alt, title, category });
+      }
+    });
+    return items;
+  }
+  
+  function renderModalContent() {
+    if (!currentItems[currentIndex]) return;
+    const item = currentItems[currentIndex];
     modalMedia.innerHTML = '';
-    if (mediaElement.tagName === 'IFRAME') {
-      modalMedia.appendChild(mediaElement.cloneNode(true));
-    } else {
-      const img = document.createElement('img');
-      img.src = mediaElement.src;
-      img.alt = mediaElement.alt;
-      modalMedia.appendChild(img);
-    }
-    modalCaption.textContent = `${category} · ${title}`;
+    const img = document.createElement('img');
+    img.src = item.imgSrc;
+    img.alt = item.alt;
+    modalMedia.appendChild(img);
+    modalCaption.textContent = `${item.category} · ${item.title}`;
+    modalCounter.textContent = `${currentIndex + 1} / ${currentItems.length}`;
+  }
+  
+  function openModalWithIndex(service, index) {
+    currentService = service;
+    currentItems = getVisibleItemsFromSection(service);
+    if (currentItems.length === 0) return;
+    currentIndex = (index + currentItems.length) % currentItems.length;
+    renderModalContent();
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+  }
+  
+  function nextItem() {
+    if (currentItems.length === 0) return;
+    currentIndex = (currentIndex + 1) % currentItems.length;
+    renderModalContent();
+  }
+  
+  function prevItem() {
+    if (currentItems.length === 0) return;
+    currentIndex = (currentIndex - 1 + currentItems.length) % currentItems.length;
+    renderModalContent();
   }
   
   function closeModal() {
     modal.classList.remove('active');
     document.body.style.overflow = '';
-    const iframe = modalMedia.querySelector('iframe');
-    if (iframe) iframe.src = '';
     modalMedia.innerHTML = '';
+    currentItems = [];
+    currentIndex = 0;
   }
   
   modalClose.addEventListener('click', closeModal);
+  modalPrev.addEventListener('click', (e) => { e.stopPropagation(); prevItem(); });
+  modalNext.addEventListener('click', (e) => { e.stopPropagation(); nextItem(); });
   modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('active')) closeModal(); });
   
-  // Event listeners para cada item
-  document.querySelectorAll('.masonry-item').forEach(item => {
-    item.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const img = item.querySelector('img');
-      const title = item.querySelector('.item-overlay h4')?.innerText || 'Proyecto';
-      const category = item.querySelector('.item-cat')?.innerText || 'Trabajo';
-      
-      if (img) {
-        const modalImg = document.createElement('img');
-        modalImg.src = img.src;
-        modalImg.alt = img.alt;
-        modalMedia.innerHTML = '';
-        modalMedia.appendChild(modalImg);
-        modalCaption.textContent = `${category} · ${title}`;
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-      }
-    });
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('active')) return;
+    if (e.key === 'ArrowLeft') { prevItem(); e.preventDefault(); }
+    else if (e.key === 'ArrowRight') { nextItem(); e.preventDefault(); }
+    else if (e.key === 'Escape') { closeModal(); e.preventDefault(); }
   });
-
-  // FILTROS por sección
-  const sections = ['foto', 'contenido', 'diseno', 'video'];
-  sections.forEach(section => {
-    const btns = document.querySelectorAll(`.filter-btn[data-section="${section}"]`);
-    const grid = document.getElementById(`${section}-grid`);
-    if (!grid) return;
-    const items = grid.querySelectorAll('.masonry-item');
-    
-    btns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        btns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        items.forEach(item => {
-          if (filter === 'all' || item.dataset.category === filter) {
-            item.style.display = '';
-          } else {
-            item.style.display = 'none';
-          }
+  
+  let touchStartX = 0;
+  let touchEndX = 0;
+  modal.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
+  modal.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchEndX - touchStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) prevItem();
+      else nextItem();
+    }
+  });
+  
+  function attachItemClickHandlers() {
+    const sections = ['foto', 'contenido', 'diseno', 'video'];
+    sections.forEach(service => {
+      const grid = document.getElementById(`${service}-grid`);
+      if (!grid) return;
+      grid.querySelectorAll('.masonry-item').forEach((item, idx) => {
+        const newItem = item.cloneNode(true);
+        item.parentNode.replaceChild(newItem, item);
+        newItem.addEventListener('click', (e) => {
+          e.stopPropagation();
+          const visibleItems = getVisibleItemsFromSection(service);
+          const clickedImgSrc = newItem.querySelector('img')?.src;
+          const targetIndex = visibleItems.findIndex(i => i.imgSrc === clickedImgSrc);
+          openModalWithIndex(service, targetIndex >= 0 ? targetIndex : 0);
         });
       });
     });
-  });
+  }
+  
+  attachItemClickHandlers();
 
   // Reveal on scroll
   const io = new IntersectionObserver(entries => {
