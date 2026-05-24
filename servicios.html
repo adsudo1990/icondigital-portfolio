@@ -152,13 +152,15 @@
       cursor: pointer;
       transition: transform 0.3s var(--ease);
     }
-    .masonry-item img {
+    .masonry-item img,
+    .masonry-item .video-thumb {
       width: 100%;
       display: block;
       border-radius: 20px;
       transition: transform 0.5s var(--ease);
     }
-    .masonry-item:hover img {
+    .masonry-item:hover img,
+    .masonry-item:hover .video-thumb {
       transform: scale(1.03);
     }
     .item-overlay {
@@ -205,8 +207,13 @@
       align-items: center;
       justify-content: center;
     }
+    /* Ícono de video más grande para destacar */
+    .video-item .item-overlay i {
+      background: rgba(220,112,144,0.8);
+      font-size: 1.4rem;
+    }
 
-    /* MODAL CON NAVEGACIÓN */
+    /* MODAL CON NAVEGACIÓN - SOPORTE PARA VIDEOS R2 */
     .modal {
       display: none;
       position: fixed;
@@ -224,8 +231,8 @@
     }
     .modal-container {
       position: relative;
-      max-width: 90vw;
-      max-height: 90vh;
+      max-width: 95vw;
+      max-height: 95vh;
       cursor: default;
     }
     .modal-content {
@@ -234,20 +241,25 @@
       justify-content: center;
       min-height: 50vh;
     }
-    .modal-content img,
-    .modal-content iframe {
+    /* Imágenes en modal */
+    .modal-content img {
       max-width: 85vw;
-      max-height: 80vh;
+      max-height: 85vh;
       width: auto;
       height: auto;
       object-fit: contain;
       border-radius: 16px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
-    .modal-content iframe {
-      width: 80vw;
-      height: 45vw;
-      max-height: 80vh;
+    /* Videos en modal - reproductor nativo para R2 */
+    .modal-content video {
+      max-width: 90vw;
+      max-height: 90vh;
+      min-width: 300px;
+      min-height: 533px;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+      background: #000;
     }
     .modal-close {
       position: absolute;
@@ -413,13 +425,22 @@
       .modal-prev { left: -20px; }
       .modal-next { right: -20px; }
       .modal-close { top: -45px; right: -5px; width: 36px; height: 36px; font-size: 1.5rem; }
-      .modal-content iframe { width: 95vw; height: 54vw; }
+      .modal-content video {
+        max-width: 95vw;
+        max-height: 85vh;
+        min-width: 280px;
+        min-height: 498px;
+      }
     }
     @media (max-width: 480px) {
       .brands-grid { grid-template-columns: 1fr; }
       .modal-nav { width: 32px; height: 32px; font-size: 0.9rem; }
       .modal-prev { left: -10px; }
       .modal-next { right: -10px; }
+      .modal-content video {
+        min-width: 260px;
+        min-height: 462px;
+      }
     }
 
     /* Reveal */
@@ -460,7 +481,7 @@
   </div>
 </div>
 
-<!-- ========== 1. FOTOGRAFÍA (6 items) ========== -->
+<!-- ========== 1. FOTOGRAFÍA (6 imágenes) ========== -->
 <section id="fotografia" class="portfolio-section">
   <div class="container">
     <div class="sec-header" style="text-align: center;">
@@ -498,7 +519,7 @@
   </div>
 </section>
 
-<!-- ========== 2. CREACIÓN DE CONTENIDOS (6 items) ========== -->
+<!-- ========== 2. CREACIÓN DE CONTENIDOS (6 videos R2) ========== -->
 <section id="creacion-contenidos" class="portfolio-section">
   <div class="container">
     <div class="sec-header" style="text-align: center;">
@@ -508,35 +529,36 @@
     </div>
 
     <div class="masonry-grid" id="contenido-grid">
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Reel producto" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Reels</span><h4>Lanzamiento</h4><i class="fas fa-expand"></i></div>
+      <!-- Reemplaza las URLs con tus videos de R2 y sus miniaturas -->
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-1.mp4" data-video-title="Lanzamiento">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-creacion-1.jpg" alt="Reel producto" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+1'">
+        <div class="item-overlay"><span class="item-cat">Reels</span><h4>Lanzamiento</h4><i class="fas fa-play-circle"></i></div>
       </div>
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Story interactiva" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Stories</span><h4>Encuesta</h4><i class="fas fa-expand"></i></div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-2.mp4" data-video-title="Encuesta Interactiva">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-creacion-2.jpg" alt="Story interactiva" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+2'">
+        <div class="item-overlay"><span class="item-cat">Stories</span><h4>Encuesta</h4><i class="fas fa-play-circle"></i></div>
       </div>
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Post feed" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Posts</span><h4>Tips diseño</h4><i class="fas fa-expand"></i></div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-3.mp4" data-video-title="Making Of">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-creacion-3.jpg" alt="Reel detrás" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+3'">
+        <div class="item-overlay"><span class="item-cat">Reels</span><h4>Making of</h4><i class="fas fa-play-circle"></i></div>
       </div>
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Reel detrás" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Reels</span><h4>Making of</h4><i class="fas fa-expand"></i></div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-4.mp4" data-video-title="Tips Rápidos">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-creacion-4.jpg" alt="Post feed" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+4'">
+        <div class="item-overlay"><span class="item-cat">Posts</span><h4>Tips Rápidos</h4><i class="fas fa-play-circle"></i></div>
       </div>
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Story promoción" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Stories</span><h4>Oferta</h4><i class="fas fa-expand"></i></div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-5.mp4" data-video-title="Promoción Especial">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-creacion-5.jpg" alt="Story promoción" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+5'">
+        <div class="item-overlay"><span class="item-cat">Stories</span><h4>Oferta</h4><i class="fas fa-play-circle"></i></div>
       </div>
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Post carrusel" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Posts</span><h4>Tutorial</h4><i class="fas fa-expand"></i></div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-6.mp4" data-video-title="Tutorial Express">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-creacion-6.jpg" alt="Reel tutorial" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+6'">
+        <div class="item-overlay"><span class="item-cat">Reels</span><h4>Tutorial</h4><i class="fas fa-play-circle"></i></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== 3. DISEÑO GRÁFICO & WEB (6 items) ========== -->
+<!-- ========== 3. DISEÑO GRÁFICO & WEB (6 imágenes) ========== -->
 <section id="diseno-grafico-web" class="portfolio-section">
   <div class="container">
     <div class="sec-header" style="text-align: center;">
@@ -551,30 +573,30 @@
         <div class="item-overlay"><span class="item-cat">Branding</span><h4>Marca Verde</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Landing page" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Diseño Web</span><h4>E-commerce</h4><i class="fas fa-expand"></i></div>
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-6.png" alt="Landing page" loading="lazy">
+        <div class="item-overlay"><span class="item-cat">Diseño Web</span><h4>Pizzeria Don Raúl</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Packaging" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Packaging</span><h4>Caja Premium</h4><i class="fas fa-expand"></i></div>
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-4.png" alt="Packaging" loading="lazy">
+        <div class="item-overlay"><span class="item-cat">Diseño Carrusel</span><h4>Concesionaria Navarro</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
         <img src="images/serv-foto.jpg" alt="Papelería" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Branding</span><h4>Papelería</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="App diseño" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Diseño Web</span><h4>App móvil</h4><i class="fas fa-expand"></i></div>
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/web-4.png" alt="App diseño" loading="lazy">
+        <div class="item-overlay"><span class="item-cat">Diseño Web</span><h4>Irish Bakers</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Packaging ecológico" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Packaging</span><h4>Eco Box</h4><i class="fas fa-expand"></i></div>
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-5.png" alt="Packaging ecológico" loading="lazy">
+        <div class="item-overlay"><span class="item-cat">Diseño Campaña</span><h4>Concesionaria Kawasaki</h4><i class="fas fa-expand"></i></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== 4. EDICIÓN DE VIDEO (6 items) ========== -->
+<!-- ========== 4. EDICIÓN DE VIDEO (6 videos R2) ========== -->
 <section id="edicion-video" class="portfolio-section">
   <div class="container">
     <div class="sec-header" style="text-align: center;">
@@ -584,29 +606,30 @@
     </div>
 
     <div class="masonry-grid" id="video-grid">
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Video corporativo" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Corporativo</span><h4>Presentación</h4><i class="fas fa-expand"></i></div>
+      <!-- Reemplaza las URLs con tus videos de R2 y sus miniaturas -->
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-1.mp4" data-video-title="Presentación Corporativa">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-1.jpg" alt="Video corporativo" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+1'">
+        <div class="item-overlay"><span class="item-cat">Corporativo</span><h4>Presentación</h4><i class="fas fa-play-circle"></i></div>
       </div>
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Social clip" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Social Media</span><h4>Clip Viral</h4><i class="fas fa-expand"></i></div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-2.mp4" data-video-title="Clip Viral">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-2.jpg" alt="Social clip" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+2'">
+        <div class="item-overlay"><span class="item-cat">Social Media</span><h4>Clip Viral</h4><i class="fas fa-play-circle"></i></div>
       </div>
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Evento" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Eventos</span><h4>Lanzamiento</h4><i class="fas fa-expand"></i></div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-3.mp4" data-video-title="Aftermovie Evento">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-3.jpg" alt="Evento" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+3'">
+        <div class="item-overlay"><span class="item-cat">Eventos</span><h4>Aftermovie</h4><i class="fas fa-play-circle"></i></div>
       </div>
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Video institucional" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Corporativo</span><h4>Brand Film</h4><i class="fas fa-expand"></i></div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-4.mp4" data-video-title="Brand Film">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-4.jpg" alt="Video institucional" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+4'">
+        <div class="item-overlay"><span class="item-cat">Corporativo</span><h4>Brand Film</h4><i class="fas fa-play-circle"></i></div>
       </div>
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Short form" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Social Media</span><h4>Short Ad</h4><i class="fas fa-expand"></i></div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-5.mp4" data-video-title="Short Ad">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-5.jpg" alt="Short form" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+5'">
+        <div class="item-overlay"><span class="item-cat">Social Media</span><h4>Short Ad</h4><i class="fas fa-play-circle"></i></div>
       </div>
-      <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Evento corporativo" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Eventos</span><h4>Aftermovie</h4><i class="fas fa-expand"></i></div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-6.mp4" data-video-title="Lanzamiento Producto">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-6.jpg" alt="Evento corporativo" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+6'">
+        <div class="item-overlay"><span class="item-cat">Eventos</span><h4>Lanzamiento</h4><i class="fas fa-play-circle"></i></div>
       </div>
     </div>
   </div>
@@ -621,11 +644,11 @@
       <p class="body-lead" style="max-width: 460px; margin: 0 auto;">Más de 30 proyectos realizados con partners increíbles.</p>
     </div>
     <div class="brands-grid reveal">
-      <div class="brand-item"><img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/martinez.jpg" alt="Marca 1" onerror="this.src='https://placehold.co/100x60/f5e0df/dc7090?text=Marca+1'"><p>Café Martinez</p></div>
-      <div class="brand-item"><img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/farola.jpg" alt="Marca 2" onerror="this.src='https://placehold.co/100x60/f5e0df/dc7090?text=Marca+2'"><p>La Farola Scalabrini</p></div>
-      <div class="brand-item"><img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/pericleta.jpg" alt="Marca 3" onerror="this.src='https://placehold.co/100x60/f5e0df/dc7090?text=Marca+3'"><p>Jueguetería Pericleta</p></div>
-      <div class="brand-item"><img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/confia.jpg" alt="Marca 4" onerror="this.src='https://placehold.co/100x60/f5e0df/dc7090?text=Marca+4'"><p>Resto Confía</p></div>
-      <div class="brand-item"><img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/deacon.jpg" alt="Marca 5" onerror="this.src='https://placehold.co/100x60/f5e0df/dc7090?text=Marca+5'"><p>Deacon Equipamientos</p></div>
+      <div class="brand-item"><img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/martinez.jpg" alt="Café Martinez"><p>Café Martinez</p></div>
+      <div class="brand-item"><img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/farola.jpg" alt="La Farola Scalabrini"><p>La Farola Scalabrini</p></div>
+      <div class="brand-item"><img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/pericleta.jpg" alt="Jueguetería Pericleta"><p>Jueguetería Pericleta</p></div>
+      <div class="brand-item"><img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/confia.jpg" alt="Resto Confía"><p>Resto Confía</p></div>
+      <div class="brand-item"><img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/deacon.jpg" alt="Deacon Equipamientos"><p>Deacon Equipamientos</p></div>
     </div>
   </div>
 </section>
@@ -682,7 +705,7 @@
 
 <a id="scroll-top" href="#" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></a>
 
-<!-- MODAL LIGHTBOX CON NAVEGACIÓN -->
+<!-- MODAL LIGHTBOX CON NAVEGACIÓN PARA R2 -->
 <div id="lightbox-modal" class="modal">
   <div class="modal-container">
     <button class="modal-close">&times;</button>
@@ -808,7 +831,7 @@
   window.addEventListener('scroll', () => { scrollBtn.style.display = window.scrollY > 320 ? 'flex' : 'none'; });
   scrollBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-  // ========== MODAL CON GALERÍA Y NAVEGACIÓN ==========
+  // ========== MODAL CON GALERÍA Y NAVEGACIÓN (soporta imágenes y videos R2) ==========
   const modal = document.getElementById('lightbox-modal');
   const modalMedia = document.getElementById('modal-media');
   const modalCaption = document.getElementById('modal-caption');
@@ -826,11 +849,32 @@
     if (!grid) return [];
     const items = [];
     grid.querySelectorAll('.masonry-item').forEach(item => {
-      const img = item.querySelector('img');
       const title = item.querySelector('.item-overlay h4')?.innerText || 'Proyecto';
       const category = item.querySelector('.item-cat')?.innerText || 'Trabajo';
-      if (img) {
-        items.push({ imgSrc: img.src, alt: img.alt, title, category });
+      
+      // Detectar si es video (R2) o imagen
+      const videoUrl = item.dataset.videoUrl;
+      if (videoUrl) {
+        // Es un video de R2
+        items.push({ 
+          type: 'r2video',
+          videoUrl: videoUrl,
+          title: title, 
+          category: category,
+          videoTitle: item.dataset.videoTitle || title
+        });
+      } else {
+        // Es una imagen
+        const img = item.querySelector('img');
+        if (img) {
+          items.push({ 
+            type: 'image', 
+            imgSrc: img.src, 
+            alt: img.alt, 
+            title: title, 
+            category: category 
+          });
+        }
       }
     });
     return items;
@@ -840,11 +884,28 @@
     if (!currentItems[currentIndex]) return;
     const item = currentItems[currentIndex];
     modalMedia.innerHTML = '';
-    const img = document.createElement('img');
-    img.src = item.imgSrc;
-    img.alt = item.alt;
-    modalMedia.appendChild(img);
-    modalCaption.textContent = `${item.category} · ${item.title}`;
+    
+    if (item.type === 'r2video') {
+      // Reproductor de video nativo para R2
+      const video = document.createElement('video');
+      video.src = item.videoUrl;
+      video.controls = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.style.maxWidth = '90vw';
+      video.style.maxHeight = '90vh';
+      video.style.minWidth = '300px';
+      video.style.minHeight = '533px';
+      video.style.borderRadius = '16px';
+      modalMedia.appendChild(video);
+      modalCaption.textContent = `${item.category} · ${item.videoTitle || item.title}`;
+    } else {
+      const img = document.createElement('img');
+      img.src = item.imgSrc;
+      img.alt = item.alt;
+      modalMedia.appendChild(img);
+      modalCaption.textContent = `${item.category} · ${item.title}`;
+    }
     modalCounter.textContent = `${currentIndex + 1} / ${currentItems.length}`;
   }
   
@@ -913,8 +974,18 @@
         newItem.addEventListener('click', (e) => {
           e.stopPropagation();
           const visibleItems = getVisibleItemsFromSection(service);
-          const clickedImgSrc = newItem.querySelector('img')?.src;
-          const targetIndex = visibleItems.findIndex(i => i.imgSrc === clickedImgSrc);
+          
+          // Buscar el índice del item clickeado
+          let targetIndex = 0;
+          const videoUrl = newItem.dataset.videoUrl;
+          const imgSrc = newItem.querySelector('img')?.src;
+          
+          if (videoUrl) {
+            targetIndex = visibleItems.findIndex(i => i.type === 'r2video' && i.videoUrl === videoUrl);
+          } else {
+            targetIndex = visibleItems.findIndex(i => i.type === 'image' && i.imgSrc === imgSrc);
+          }
+          
           openModalWithIndex(service, targetIndex >= 0 ? targetIndex : 0);
         });
       });
