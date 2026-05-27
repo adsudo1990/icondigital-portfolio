@@ -2,18 +2,41 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Portfolio completo de Icon Digital — Fotografía, Creación de Contenidos, Diseño Gráfico & Web, Edición de Video." />
-  <title>Icon Digital · Portfolio completo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   
-  <link rel="icon" type="image/png" href="images/favicon.ico">
+  <!-- SEO Meta tags -->
+  <meta name="description" content="Portfolio completo de Icon Digital: Fotografía profesional, Creación de Contenidos, Diseño Gráfico y Web, Edición de Video. Proyectos reales que muestran nuestro trabajo." />
+  <meta name="keywords" content="portfolio fotografía, creación de contenidos, diseño gráfico, diseño web, edición de video, agencia marketing, trabajos realizados" />
+  <meta name="author" content="Icon Digital" />
+  <meta name="robots" content="index, follow" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adsudo1990.github.io/icondigital-portfolio/servicios.html" />
+  <meta property="og:title" content="Icon Digital · Portfolio completo - Fotografía, Contenidos, Diseño y Video" />
+  <meta property="og:description" content="Explorá proyectos reales de fotografía, contenido, diseño y edición. Conocé nuestro trabajo." />
+  <meta property="og:image" content="https://adsudo1990.github.io/icondigital-portfolio/images/og-image.jpg" />
+  <meta property="og:site_name" content="Icon Digital" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Icon Digital · Portfolio" />
+  <meta name="twitter:description" content="Explorá proyectos reales de fotografía, contenido, diseño y edición." />
+  <meta name="twitter:image" content="https://adsudo1990.github.io/icondigital-portfolio/images/og-image.jpg" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://adsudo1990.github.io/icondigital-portfolio/servicios.html" />
+  
+  <title>Icon Digital · Portfolio | Fotografía, Contenidos, Diseño Gráfico y Edición de Video</title>
+  
+  <link rel="icon" type="image/png" href="images/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    /* ========== TOKENS ========== */
+    /* ===== TU CSS ACTUAL COMPLETO (copia exactamente igual) ===== */
     :root {
       --dark:   #303030;
       --rose:   #dc7090;
@@ -59,7 +82,6 @@
     .btn-white       { background: var(--white); color: var(--rose); border-color: var(--white); }
     .btn-white:hover { background: transparent; color: var(--white); }
 
-    /* Nav toggle */
     #nav-toggle {
       position: fixed; top: 16px; right: 16px; z-index: 1100;
       width: 46px; height: 46px; border-radius: 50%;
@@ -70,7 +92,6 @@
     }
     #nav-toggle:hover { background: var(--rose); border-color: var(--rose); }
 
-    /* Sidebar */
     #sidebar-overlay {
       display: none; position: fixed; inset: 0;
       background: rgba(0,0,0,.45); backdrop-filter: blur(3px); z-index: 1000;
@@ -94,7 +115,6 @@
     .sb-nav a:hover { color: var(--white); background: rgba(220,112,144,.1); border-left-color: var(--rose); padding-left: 2.1rem; }
     .sb-nav a i { width: 18px; text-align: center; }
 
-    /* Scroll top */
     #scroll-top {
       position: fixed; bottom: 18px; right: 18px; width: 42px; height: 42px;
       border-radius: 50%; background: var(--rose); color: var(--white);
@@ -104,7 +124,6 @@
     }
     #scroll-top:hover { background: var(--dark); transform: translateY(-3px); }
 
-    /* Hero de página */
     .page-hero {
       background: var(--dark);
       padding: 6rem 0 4rem;
@@ -118,7 +137,6 @@
       pointer-events: none;
     }
 
-    /* Sección de portfolio */
     .portfolio-section {
       background: var(--white);
       border-bottom: 1px solid rgba(0,0,0,.05);
@@ -138,7 +156,6 @@
       margin: 0 auto 2rem auto;
     }
 
-    /* MASONRY GRID */
     .masonry-grid {
       column-count: 3;
       column-gap: 1.5rem;
@@ -207,13 +224,11 @@
       align-items: center;
       justify-content: center;
     }
-    /* Ícono de video más grande para destacar */
     .video-item .item-overlay i {
       background: rgba(220,112,144,0.8);
       font-size: 1.4rem;
     }
 
-    /* MODAL CON NAVEGACIÓN - SOPORTE PARA VIDEOS R2 */
     .modal {
       display: none;
       position: fixed;
@@ -241,7 +256,6 @@
       justify-content: center;
       min-height: 50vh;
     }
-    /* Imágenes en modal */
     .modal-content img {
       max-width: 85vw;
       max-height: 85vh;
@@ -251,7 +265,6 @@
       border-radius: 16px;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
     }
-    /* Videos en modal - reproductor nativo para R2 */
     .modal-content video {
       max-width: 90vw;
       max-height: 90vh;
@@ -332,7 +345,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Marcas */
     .brands-grid {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -362,7 +374,6 @@
       margin-top: 0.5rem;
     }
 
-    /* Redes sociales adicionales */
     .social-links {
       display: flex;
       justify-content: center;
@@ -388,7 +399,6 @@
       transform: translateY(-4px);
     }
 
-    /* Footer */
     footer { background: #1e1c1c; padding: 3.5rem 0 2rem; margin-top: 2rem; }
     .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
     .footer-logo-img { width: 130px; border-radius: 8px; margin-bottom: .75rem; }
@@ -409,7 +419,6 @@
     hr.fdiv { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 1.5rem; }
     .footer-copy { font-size: .78rem; color: rgba(255,255,255,.25); text-align: center; }
 
-    /* Responsive */
     @media (max-width: 991px) {
       .masonry-grid { column-count: 2; }
       .brands-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
@@ -443,11 +452,11 @@
       }
     }
 
-    /* Reveal */
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
   </style>
 </head>
+
 <body>
 
 <!-- NAV TOGGLE -->
@@ -455,9 +464,9 @@
 <div id="sidebar-overlay"></div>
 
 <!-- SIDEBAR -->
-<nav id="sidebar">
+<nav id="sidebar" aria-label="Menú principal">
   <div class="sb-logo">
-    <img src="images/logo-id.png" alt="Icon Digital" />
+    <img src="images/logo-id.png" alt="Icon Digital - Agencia de Marketing Digital" />
   </div>
   <div class="sb-nav">
     <a href="index.html"><i class="fas fa-house"></i> Inicio</a>
@@ -468,7 +477,7 @@
   </div>
 </nav>
 
-<!-- ========== ENCABEZADO ========== -->
+<!-- ENCABEZADO -->
 <div class="page-hero">
   <div class="container">
     <span class="label" style="color: var(--rose);">Portfolio</span>
@@ -481,7 +490,7 @@
   </div>
 </div>
 
-<!-- ========== 1. FOTOGRAFÍA (6 imágenes) ========== -->
+<!-- ========== 1. FOTOGRAFÍA ========== -->
 <section id="fotografia" class="portfolio-section">
   <div class="container">
     <div class="sec-header" style="text-align: center;">
@@ -492,34 +501,34 @@
 
     <div class="masonry-grid" id="foto-grid">
       <div class="masonry-item">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-1.jpg" alt="Sesión de producto" loading="lazy">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-1.jpg" alt="Sesión de producto - Confía" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Producto</span><h4>Confía</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-2.jpg" alt="Marca en contexto" loading="lazy">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-2.jpg" alt="Marca en contexto - Café Martinez" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Producto</span><h4>Café Martinez</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-3.jpg" alt="Retrato profesional" loading="lazy">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-3.jpg" alt="Producto - Confía" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Producto</span><h4>Confía</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-4.jpg" alt="Packaging" loading="lazy">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-4.jpg" alt="Día de los Enamorados - Packaging" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Producto</span><h4>Día de los Enamorados</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-5.jpg" alt="Estilo de vida" loading="lazy">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-5.jpg" alt="Sesión lifestyle - Porunmate" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Sesión</span><h4>Porunmate</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-6.jpg" alt="Retrato artístico" loading="lazy">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-6.jpg" alt="Producto - Burger Place" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Producto</span><h4>Burger Place</h4><i class="fas fa-expand"></i></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== 2. CREACIÓN DE CONTENIDOS (6 videos R2) ========== -->
+<!-- ========== 2. CREACIÓN DE CONTENIDOS ========== -->
 <section id="creacion-contenidos" class="portfolio-section">
   <div class="container">
     <div class="sec-header" style="text-align: center;">
@@ -529,9 +538,8 @@
     </div>
 
     <div class="masonry-grid" id="contenido-grid">
-      <!-- Reemplaza las URLs con tus videos de R2 y sus miniaturas -->
       <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-1.mp4" data-video-title="Lanzamiento">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-1-thumb.JPG" alt="Reel producto" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+1'">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-1-thumb.JPG" alt="Reel de lanzamiento" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+1'">
         <div class="item-overlay"><span class="item-cat">Reels</span><h4>Lanzamiento</h4><i class="fas fa-play-circle"></i></div>
       </div>
       <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-2.mp4" data-video-title="Encuesta Interactiva">
@@ -539,26 +547,26 @@
         <div class="item-overlay"><span class="item-cat">Stories</span><h4>Encuesta</h4><i class="fas fa-play-circle"></i></div>
       </div>
       <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-3.mp4" data-video-title="Making Of">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-3-thumb.JPG" alt="Reel detrás" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+3'">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-3-thumb.JPG" alt="Behind the scenes" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+3'">
         <div class="item-overlay"><span class="item-cat">Reels</span><h4>Making of</h4><i class="fas fa-play-circle"></i></div>
       </div>
       <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-4.mp4" data-video-title="Tips Rápidos">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-4-thumb.JPG" alt="Post feed" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+4'">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-4-thumb.JPG" alt="Tips rápidos post" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+4'">
         <div class="item-overlay"><span class="item-cat">Posts</span><h4>Tips Rápidos</h4><i class="fas fa-play-circle"></i></div>
       </div>
       <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-5.mp4" data-video-title="Promoción Especial">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-5-thumb.JPG" alt="Story promoción" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+5'">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-5-thumb.JPG" alt="Promoción especial story" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+5'">
         <div class="item-overlay"><span class="item-cat">Stories</span><h4>Oferta</h4><i class="fas fa-play-circle"></i></div>
       </div>
       <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-6.mp4" data-video-title="Tutorial Express">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-6-thumb.JPG" alt="Reel tutorial" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+6'">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/creacion-6-thumb.JPG" alt="Tutorial express reel" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+6'">
         <div class="item-overlay"><span class="item-cat">Reels</span><h4>Tutorial</h4><i class="fas fa-play-circle"></i></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== 3. DISEÑO GRÁFICO & WEB (6 imágenes) ========== -->
+<!-- ========== 3. DISEÑO GRÁFICO & WEB ========== -->
 <section id="diseno-grafico-web" class="portfolio-section">
   <div class="container">
     <div class="sec-header" style="text-align: center;">
@@ -569,71 +577,32 @@
 
     <div class="masonry-grid" id="diseno-grid">
       <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Identidad visual" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Branding</span><h4>Marca Verde</h4><i class="fas fa-expand"></i></div>
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-1.png" alt="Branding Simple" loading="lazy">
+        <div class="item-overlay"><span class="item-cat">Branding</span><h4>Simple</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-6.png" alt="Landing page" loading="lazy">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-6.png" alt="Diseño web Pizzeria Don Raúl" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Diseño Web</span><h4>Pizzeria Don Raúl</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-4.png" alt="Packaging" loading="lazy">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-4.png" alt="Diseño carrusel Concesionaria Navarro" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Diseño Carrusel</span><h4>Concesionaria Navarro</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="images/serv-foto.jpg" alt="Papelería" loading="lazy">
-        <div class="item-overlay"><span class="item-cat">Branding</span><h4>Papelería</h4><i class="fas fa-expand"></i></div>
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-2.png" alt="Branding Rioexpress" loading="lazy">
+        <div class="item-overlay"><span class="item-cat">Branding</span><h4>Rioexpress</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/web-4.png" alt="App diseño" loading="lazy">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/web-4.png" alt="Diseño web Irish Bakers" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Diseño Web</span><h4>Irish Bakers</h4><i class="fas fa-expand"></i></div>
       </div>
       <div class="masonry-item">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-5.png" alt="Packaging ecológico" loading="lazy">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-5.png" alt="Diseño campaña Concesionaria Kawasaki" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Diseño Campaña</span><h4>Concesionaria Kawasaki</h4><i class="fas fa-expand"></i></div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- ========== 4. EDICIÓN DE VIDEO (6 videos R2) ========== -->
-<!--section id="edicion-video" class="portfolio-section">
-  <div class="container">
-    <div class="sec-header" style="text-align: center;">
-      <span class="label">04</span>
-      <h2 class="section-title">Edición de Video</h2>
-      <p class="section-desc">Postproducción profesional para redes y comerciales.</p>
-    </div>
-
-    <div class="masonry-grid" id="video-grid">
-      
-      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-1.mp4" data-video-title="Presentación Corporativa">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-1.jpg" alt="Video corporativo" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+1'">
-        <div class="item-overlay"><span class="item-cat">Corporativo</span><h4>Presentación</h4><i class="fas fa-play-circle"></i></div>
-      </div>
-      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-2.mp4" data-video-title="Clip Viral">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-2.jpg" alt="Social clip" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+2'">
-        <div class="item-overlay"><span class="item-cat">Social Media</span><h4>Clip Viral</h4><i class="fas fa-play-circle"></i></div>
-      </div>
-      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-3.mp4" data-video-title="Aftermovie Evento">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-3.jpg" alt="Evento" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+3'">
-        <div class="item-overlay"><span class="item-cat">Eventos</span><h4>Aftermovie</h4><i class="fas fa-play-circle"></i></div>
-      </div>
-      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-4.mp4" data-video-title="Brand Film">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-4.jpg" alt="Video institucional" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+4'">
-        <div class="item-overlay"><span class="item-cat">Corporativo</span><h4>Brand Film</h4><i class="fas fa-play-circle"></i></div>
-      </div>
-      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-5.mp4" data-video-title="Short Ad">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-5.jpg" alt="Short form" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+5'">
-        <div class="item-overlay"><span class="item-cat">Social Media</span><h4>Short Ad</h4><i class="fas fa-play-circle"></i></div>
-      </div>
-      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-6.mp4" data-video-title="Lanzamiento Producto">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/thumb-edicion-6.jpg" alt="Evento corporativo" loading="lazy" onerror="this.src='https://placehold.co/600x800/f5e0df/dc7090?text=Video+6'">
-        <div class="item-overlay"><span class="item-cat">Eventos</span><h4>Lanzamiento</h4><i class="fas fa-play-circle"></i></div>
-      </div>
-    </div>
-  </div>
-</section-->
 
 <!-- ========== MARCAS QUE CONFÍAN ========== -->
 <section style="background: var(--blush); padding: 4rem 0;">
@@ -653,30 +622,30 @@
   </div>
 </section>
 
-<!-- ========== REDES SOCIALES (adicional) ========== -->
+<!-- ========== REDES SOCIALES ========== -->
 <section style="background: var(--white); padding: 3rem 0;">
   <div class="container" style="text-align: center;">
     <span class="label">Seguinos</span>
     <h2 class="h-section">Conectá con <br>nuestro día a día.</h2>
     <div class="social-links">
-      <a href="https://www.instagram.com/icondigital.ok" target="_blank" class="social-circle"><i class="fab fa-instagram"></i></a>
-      <a href="https://api.whatsapp.com/send?phone=5491124630157&text=Hola,%20me%20comunico%20de%20la%20web%20quiero%20hacer%20crecer%20mi%20marca.%20M%C3%A1s%20info.%20Gracias!" target="_blank" class="social-circle"><i class="fab fa-whatsapp"></i></a>
-      <a href="https://www.facebook.com/people/Icon-Digital/61579964544859/" target="_blank" class="social-circle"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/icondigital.ok" target="_blank" rel="noopener noreferrer" class="social-circle"><i class="fab fa-instagram"></i></a>
+      <a href="https://api.whatsapp.com/send?phone=5491124630157&text=Hola,%20me%20comunico%20de%20la%20web%20quiero%20hacer%20crecer%20mi%20marca.%20M%C3%A1s%20info.%20Gracias!" target="_blank" rel="noopener noreferrer" class="social-circle"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.facebook.com/people/Icon-Digital/61579964544859/" target="_blank" rel="noopener noreferrer" class="social-circle"><i class="fab fa-facebook-f"></i></a>
     </div>
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-grid">
       <div>
-        <img src="images/logo-id.png" alt="Icon Digital" class="footer-logo-img" />
+        <img src="images/logo-id.png" alt="Icon Digital - Agencia de Marketing Digital" class="footer-logo-img" />
         <p class="footer-slogan">Manejo de redes con coherencia.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/icondigital.ok" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/people/Icon-Digital/61579964544859/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://api.whatsapp.com/send?phone=5491124630157" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/icondigital.ok" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Icon-Digital/61579964544859/" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://api.whatsapp.com/send?phone=5491124630157" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div>
@@ -705,7 +674,7 @@
 
 <a id="scroll-top" href="#" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></a>
 
-<!-- MODAL LIGHTBOX CON NAVEGACIÓN PARA R2 -->
+<!-- MODAL LIGHTBOX -->
 <div id="lightbox-modal" class="modal">
   <div class="modal-container">
     <button class="modal-close">&times;</button>
@@ -804,16 +773,16 @@
 </style>
 
 <script>
-  // Sidebar
   const toggle = document.getElementById('nav-toggle');
   const sidebar = document.getElementById('sidebar');
   const overlay = document.getElementById('sidebar-overlay');
+
   const openSB = () => { sidebar.classList.add('open'); overlay.classList.add('open'); toggle.innerHTML = '<i class="fas fa-times"></i>'; };
   const closeSB = () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); toggle.innerHTML = '<i class="fas fa-bars"></i>'; };
+
   toggle.addEventListener('click', () => sidebar.classList.contains('open') ? closeSB() : openSB());
   overlay.addEventListener('click', closeSB);
 
-  // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e) {
       const href = this.getAttribute('href');
@@ -826,12 +795,10 @@
     });
   });
 
-  // Scroll top
   const scrollBtn = document.getElementById('scroll-top');
   window.addEventListener('scroll', () => { scrollBtn.style.display = window.scrollY > 320 ? 'flex' : 'none'; });
   scrollBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-  // ========== MODAL CON GALERÍA Y NAVEGACIÓN (soporta imágenes y videos R2) ==========
   const modal = document.getElementById('lightbox-modal');
   const modalMedia = document.getElementById('modal-media');
   const modalCaption = document.getElementById('modal-caption');
@@ -851,29 +818,13 @@
     grid.querySelectorAll('.masonry-item').forEach(item => {
       const title = item.querySelector('.item-overlay h4')?.innerText || 'Proyecto';
       const category = item.querySelector('.item-cat')?.innerText || 'Trabajo';
-      
-      // Detectar si es video (R2) o imagen
       const videoUrl = item.dataset.videoUrl;
       if (videoUrl) {
-        // Es un video de R2
-        items.push({ 
-          type: 'r2video',
-          videoUrl: videoUrl,
-          title: title, 
-          category: category,
-          videoTitle: item.dataset.videoTitle || title
-        });
+        items.push({ type: 'r2video', videoUrl: videoUrl, title: title, category: category, videoTitle: item.dataset.videoTitle || title });
       } else {
-        // Es una imagen
         const img = item.querySelector('img');
         if (img) {
-          items.push({ 
-            type: 'image', 
-            imgSrc: img.src, 
-            alt: img.alt, 
-            title: title, 
-            category: category 
-          });
+          items.push({ type: 'image', imgSrc: img.src, alt: img.alt, title: title, category: category });
         }
       }
     });
@@ -884,9 +835,7 @@
     if (!currentItems[currentIndex]) return;
     const item = currentItems[currentIndex];
     modalMedia.innerHTML = '';
-    
     if (item.type === 'r2video') {
-      // Reproductor de video nativo para R2
       const video = document.createElement('video');
       video.src = item.videoUrl;
       video.controls = true;
@@ -951,8 +900,7 @@
     else if (e.key === 'Escape') { closeModal(); e.preventDefault(); }
   });
   
-  let touchStartX = 0;
-  let touchEndX = 0;
+  let touchStartX = 0, touchEndX = 0;
   modal.addEventListener('touchstart', (e) => { touchStartX = e.changedTouches[0].screenX; });
   modal.addEventListener('touchend', (e) => {
     touchEndX = e.changedTouches[0].screenX;
@@ -964,7 +912,7 @@
   });
   
   function attachItemClickHandlers() {
-    const sections = ['foto', 'contenido', 'diseno', 'video'];
+    const sections = ['foto', 'contenido', 'diseno'];
     sections.forEach(service => {
       const grid = document.getElementById(`${service}-grid`);
       if (!grid) return;
@@ -974,18 +922,14 @@
         newItem.addEventListener('click', (e) => {
           e.stopPropagation();
           const visibleItems = getVisibleItemsFromSection(service);
-          
-          // Buscar el índice del item clickeado
           let targetIndex = 0;
           const videoUrl = newItem.dataset.videoUrl;
           const imgSrc = newItem.querySelector('img')?.src;
-          
           if (videoUrl) {
             targetIndex = visibleItems.findIndex(i => i.type === 'r2video' && i.videoUrl === videoUrl);
           } else {
             targetIndex = visibleItems.findIndex(i => i.type === 'image' && i.imgSrc === imgSrc);
           }
-          
           openModalWithIndex(service, targetIndex >= 0 ? targetIndex : 0);
         });
       });
@@ -994,7 +938,6 @@
   
   attachItemClickHandlers();
 
-  // Reveal on scroll
   const io = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
   }, { threshold: 0.1 });

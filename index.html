@@ -2,20 +2,91 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Icon Digital — Agencia de marketing digital. Manejo de redes con coherencia. Fotografía, creación de contenidos y diseño gráfico/web." />
-  <title>Icon Digital • Tu marca merece verse como lo que vale</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   
-  <!--FAVICON -->
-  <link rel="icon" type="image/png" href="images/favicon.ico">
+  <!-- SEO Meta tags -->
+  <meta name="description" content="Icon Digital: Agencia de marketing digital especializada en fotografía profesional, creación de contenidos, diseño gráfico y web, edición de video y estrategias creativas. Hacemos que tu marca se vea como realmente merece." />
+  <meta name="keywords" content="agencia de marketing digital, fotografía profesional, creación de contenidos, diseño gráfico, diseño web, edición de video, estrategias creativas, community manager, branding, redes sociales, manejo de redes" />
+  <meta name="author" content="Icon Digital" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="Spanish" />
+  <meta name="revisit-after" content="7 days" />
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://adsudo1990.github.io/icondigital-portfolio/" />
+  <meta property="og:title" content="Icon Digital | Agencia de Marketing Digital - Tu marca merece verse como lo que vale" />
+  <meta property="og:description" content="Fotografía, contenido y diseño que conectan. Ayudamos a marcas a contar su historia con coherencia y profesionalismo. ¡Hablemos!" />
+  <meta property="og:image" content="https://adsudo1990.github.io/icondigital-portfolio/images/og-image.jpg" />
+  <meta property="og:image:alt" content="Icon Digital - Agencia de Marketing Digital" />
+  <meta property="og:site_name" content="Icon Digital" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://adsudo1990.github.io/icondigital-portfolio/" />
+  <meta name="twitter:title" content="Icon Digital | Agencia de Marketing Digital" />
+  <meta name="twitter:description" content="Hacemos que tu marca se vea como realmente merece. Fotografía, contenido y diseño con propósito." />
+  <meta name="twitter:image" content="https://adsudo1990.github.io/icondigital-portfolio/images/og-image.jpg" />
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://adsudo1990.github.io/icondigital-portfolio/" />
+  
+  <!-- Preconexión a CDNs -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+  
+  <title>Icon Digital | Agencia de Marketing Digital - Fotografía, Contenidos y Diseño que Conectan</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
-  <!-- Font Awesome 6 Free — cdnjs -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
 
+  <!-- Schema.org markup for Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Icon Digital",
+    "url": "https://adsudo1990.github.io/icondigital-portfolio/",
+    "logo": "https://adsudo1990.github.io/icondigital-portfolio/images/logo-id.png",
+    "image": "https://adsudo1990.github.io/icondigital-portfolio/images/og-image.jpg",
+    "description": "Agencia de marketing digital especializada en fotografía profesional, creación de contenidos, diseño gráfico y web, edición de video y estrategias creativas para marcas que quieren crecer.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "telephone": "+5491124630157",
+      "email": "icondigitalorg@gmail.com",
+      "availableLanguage": "Spanish"
+    },
+    "sameAs": [
+      "https://www.instagram.com/icondigital.ok",
+      "https://www.facebook.com/people/Icon-Digital/61579964544859/"
+    ],
+    "priceRange": "$$",
+    "areaServed": "AR",
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios de marketing digital",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Fotografía profesional" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Creación de Contenidos" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño Gráfico & Web" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Edición de Video" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Estrategias Creativas" } }
+      ]
+    }
+  }
+  </script>
+
   <style>
-    /* ─── TOKENS ─── */
+    /* ===== TU CSS ACTUAL COMPLETO (copia exactamente igual) ===== */
     :root {
       --dark:   #303030;
       --rose:   #dc7090;
@@ -29,18 +100,15 @@
       --tr:     .28s var(--ease);
     }
 
-    /* ─── RESET ─── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 20px; }
     body { font-family: var(--ff-b); color: var(--dark); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     img  { display: block; max-width: 100%; height: auto; }
     a    { color: inherit; text-decoration: none; }
 
-    /* ─── LAYOUT ─── */
     .container { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
     section { padding: 7rem 0; }
 
-    /* ─── TYPE HELPERS ─── */
     .label {
       display: inline-block; font-size: .72rem; font-weight: 600;
       letter-spacing: .2em; text-transform: uppercase; color: var(--rose); margin-bottom: .9rem;
@@ -51,7 +119,6 @@
     }
     .body-lead { font-size: 1.05rem; font-weight: 300; line-height: 1.8; color: #666; }
 
-    /* ─── BUTTONS ─── */
     .btn {
       display: inline-flex; align-items: center; gap: .55rem;
       padding: .9rem 2rem; border-radius: 50px; font-family: var(--ff-b);
@@ -67,7 +134,6 @@
     .btn-ghost-rose  { background: transparent; color: var(--white); border-color: rgba(255,255,255,.45); }
     .btn-ghost-rose:hover { border-color: var(--white); background: rgba(255,255,255,.1); }
 
-    /* ─── NAV TOGGLE ─── */
     #nav-toggle {
       position: fixed; top: 16px; right: 16px; z-index: 1100;
       width: 46px; height: 46px; border-radius: 50%;
@@ -78,7 +144,6 @@
     }
     #nav-toggle:hover { background: var(--rose); border-color: var(--rose); }
 
-    /* ─── SIDEBAR ─── */
     #sidebar-overlay {
       display: none; position: fixed; inset: 0;
       background: rgba(0,0,0,.45); backdrop-filter: blur(3px); z-index: 1000;
@@ -105,7 +170,6 @@
     .sb-nav a:hover { color: var(--white); background: rgba(220,112,144,.1); border-left-color: var(--rose); padding-left: 2.1rem; }
     .sb-nav a i { width: 18px; text-align: center; }
 
-    /* ─── SCROLL TOP ─── */
     #scroll-top {
       position: fixed; bottom: 18px; right: 18px; width: 42px; height: 42px;
       border-radius: 50%; background: var(--rose); color: var(--white);
@@ -115,7 +179,6 @@
     }
     #scroll-top:hover { background: var(--dark); transform: translateY(-3px); }
 
-    /* ─── HERO ─── */
     #hero {
       min-height: 100svh; background: var(--dark);
       display: flex; align-items: center; position: relative; overflow: hidden;
@@ -150,7 +213,6 @@
     }
     .hero-ctas { display: flex; flex-wrap: wrap; gap: .85rem; }
 
-    /* ─── NOSOTROS ─── */
     #nosotros { background: var(--white); }
     .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
     .about-body { font-size: .97rem; line-height: 1.85; color: #5a5555; margin-bottom: 1.25rem; }
@@ -163,7 +225,6 @@
     .stat-num { display: block; font-family: var(--ff-h); font-size: 2.6rem; font-weight: 700; color: var(--rose); line-height: 1; margin-bottom: .35rem; }
     .stat-lbl { font-size: .75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
 
-    /* ─── SERVICIOS ─── */
     #servicios { background: var(--dark); position: relative; overflow: hidden; }
     #servicios::before {
       content: ''; position: absolute; top: 0; left: 0; right: 0;
@@ -191,7 +252,6 @@
     .serv-card h4 { font-family: var(--ff-h); font-size: 1.35rem; font-weight: 600; color: var(--white); margin-bottom: .75rem; position: relative; z-index: 1; }
     .serv-card p  { font-size: .9rem; color: rgba(255,255,255,.55); line-height: 1.78; position: relative; z-index: 1; }
 
-    /* ─── TRABAJOS ─── */
     #trabajos { background: var(--blush); }
     .trabajos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem; }
     .work-item { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 3/4; cursor: pointer; }
@@ -209,14 +269,12 @@
     .work-cap h5 { font-family: var(--ff-h); color: var(--white); font-size: 1rem; font-weight: 600; margin-bottom: .18rem; }
     .work-cap p  { font-size: .76rem; color: rgba(255,255,255,.72); }
 
-    /* ─── EQUIPO ─── */
     #equipo { background: var(--white); }
     .equipo-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
     }
-
     .team-card {
       border: 1px solid rgba(220,112,144,.18);
       border-radius: 20px;
@@ -228,8 +286,6 @@
       border-color: var(--rose);
       box-shadow: 0 14px 44px rgba(220,112,144,.15);
     }
-
-    /* Avatar cuadrado */
     .team-avatar {
       width: 100%; aspect-ratio: 1; background: var(--blush);
       display: flex; align-items: center; justify-content: center;
@@ -237,8 +293,6 @@
       position: relative; overflow: hidden;
     }
     .team-avatar img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-
-    /* Bloque visible: nombre + profesión + flecha */
     .team-header {
       display: flex;
       align-items: center;
@@ -248,9 +302,7 @@
       gap: .75rem;
     }
     .team-header:hover { background: rgba(220,112,144,.04); }
-
     .team-info-wrap { flex: 1; min-width: 0; }
-
     .team-name {
       font-family: var(--ff-h);
       font-size: 1.2rem;
@@ -261,15 +313,12 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-
     .team-profession {
       font-size: .82rem;
       color: var(--muted);
       line-height: 1.4;
       margin: 0;
     }
-
-    /* Flecha circular */
     .team-arrow {
       width: 34px;
       height: 34px;
@@ -286,8 +335,6 @@
     .team-header:hover .team-arrow { background: var(--rose); color: var(--white); }
     .team-arrow i { transition: transform .32s var(--ease); }
     .team-header.active .team-arrow i { transform: rotate(180deg); }
-
-    /* Drawer */
     .team-drawer {
       max-height: 0;
       overflow: hidden;
@@ -295,12 +342,10 @@
       opacity: 0;
     }
     .team-drawer.open { max-height: 260px; opacity: 1; }
-
     .team-drawer-in {
       padding: .9rem 1.4rem 1.4rem;
       border-top: 1px solid rgba(220,112,144,.1);
     }
-
     .team-role-label {
       font-size: .68rem;
       font-weight: 700;
@@ -310,9 +355,7 @@
       margin-bottom: .5rem;
       display: block;
     }
-
     .team-bio { font-size: .86rem; color: #6b6565; line-height: 1.75; margin-bottom: .9rem; }
-
     .team-links { display: flex; flex-wrap: wrap; gap: .45rem; }
     .team-link {
       display: inline-flex; align-items: center; gap: .3rem;
@@ -321,7 +364,6 @@
     }
     .team-link:hover { background: var(--rose); color: var(--white); }
 
-    /* ─── CTA ─── */
     #cta { background: var(--rose); position: relative; overflow: hidden; }
     #cta::before {
       content: 'ICON'; position: absolute; font-family: var(--ff-h);
@@ -334,7 +376,6 @@
     .cta-inner p  { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,.85); line-height: 1.8; margin-bottom: 2.2rem; }
     .cta-btns { display: flex; flex-wrap: wrap; gap: .85rem; }
 
-    /* ─── CONTACTO ─── */
     #contacto { background: var(--dark); }
     .contacto-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
     .contact-card {
@@ -352,7 +393,6 @@
     .contact-info a { font-size: .95rem; color: var(--white); transition: color var(--tr); }
     .contact-info a:hover { color: var(--rose); }
 
-    /* ─── FOOTER ─── */
     footer { background: #1e1c1c; padding: 3.5rem 0 2rem; }
     .footer-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 2.5rem; margin-bottom: 2.5rem; }
     .footer-logo-img { width: 130px; border-radius: 8px; margin-bottom: .75rem; }
@@ -373,7 +413,6 @@
     hr.fdiv { border: none; border-top: 1px solid rgba(255,255,255,.07); margin-bottom: 1.5rem; }
     .footer-copy { font-size: .78rem; color: rgba(255,255,255,.25); text-align: center; }
 
-    /* ─── REVEAL ─── */
     .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s ease; }
     .reveal.visible { opacity: 1; transform: none; }
     .d1 { transition-delay: .08s; }
@@ -381,7 +420,6 @@
     .d3 { transition-delay: .24s; }
     .d4 { transition-delay: .32s; }
 
-    /* Imágenes SIEMPRE visibles — nunca ocultas por el reveal */
     .reveal img,
     .work-item img,
     .team-avatar img,
@@ -389,7 +427,6 @@
     .footer-logo-img,
     .sb-logo img { opacity: 1 !important; transform: none !important; }
 
-    /* ─── RESPONSIVE TABLET ≤991px ─── */
     @media (max-width: 991px) {
       section { padding: 5rem 0; }
       .about-grid     { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -400,7 +437,6 @@
       .footer-grid    { grid-template-columns: 1fr 1fr; }
     }
 
-    /* ─── RESPONSIVE MOBILE ≤767px ─── */
     @media (max-width: 767px) {
       section { padding: 4rem 0; }
       #hero { text-align: center; padding: 5.5rem 0 3.5rem; }
@@ -420,7 +456,6 @@
       .footer-socials { justify-content: center; }
     }
 
-    /* ─── RESPONSIVE SMALL ≤480px ─── */
     @media (max-width: 480px) {
       .hero-h1 { font-size: clamp(2.4rem, 11vw, 3rem); }
       .h-section { font-size: 1.75rem; }
@@ -440,9 +475,9 @@
 <div id="sidebar-overlay"></div>
 
 <!-- SIDEBAR -->
-<nav id="sidebar">
+<nav id="sidebar" aria-label="Menú principal">
   <div class="sb-logo">
-    <img src="images/logo-id.png" alt="Icon Digital" />
+    <img src="images/logo-id.png" alt="Icon Digital - Agencia de Marketing Digital" />
   </div>
   <div class="sb-nav">
     <a href="#hero">     <i class="fas fa-house"></i>      Inicio</a>
@@ -459,7 +494,7 @@
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
-      <img src="images/logo-id.png" alt="Icon Digital" class="hero-logo" />
+      <img src="images/logo-id.png" alt="Icon Digital - Agencia de Marketing Digital" class="hero-logo" />
       <span class="hero-eyebrow">Agencia de Marketing Digital</span>
       <h1 class="hero-h1">Tu marca merece verse como <em> lo que vale.</em></h1>
       <p class="hero-sub">Nos ocupamos de que cada imagen, cada pieza de contenido y cada detalle reflejen eso que hace única a tu marca</p>
@@ -475,24 +510,18 @@
 <section id="nosotros">
   <div class="container">
     <div class="about-grid">
-
       <div>
         <span class="label">Quiénes somos</span>
         <h2 class="h-section">Mucho más que administrar redes</h2>
-        <p class="about-body">Creamos contenido, fotografías y diseños que ayudan a mostrar tu negocio con claridad, profesionalismo y personalidad.
-        Nuestro trabajo empieza entendiendo qué hace especial a tu marca para que cada publicación refleje ese valor de forma auténtica.
-        </p>
-        <!--p class="about-body">No trabajamos con plantillas genéricas. Cada proyecto parte de conocer tu negocio, tu audiencia y tus objetivos. El resultado: una presencia digital que se reconoce, genera confianza y convierte.</p-->
+        <p class="about-body">Creamos contenido, fotografías y diseños que ayudan a mostrar tu negocio con claridad, profesionalismo y personalidad. Nuestro trabajo empieza entendiendo qué hace especial a tu marca para que cada publicación refleje ese valor de forma auténtica.</p>
         <a href="#servicios" class="btn btn-rose" style="margin-top:.5rem">Ver servicios <i class="fas fa-arrow-right"></i></a>
       </div>
-
       <div class="stats-grid">
         <div class="stat-card reveal">     <span class="stat-num">100%</span><span class="stat-lbl">Contenido original</span></div>
         <div class="stat-card reveal d1">  <span class="stat-num">8</span>    <span class="stat-lbl">Especialistas</span></div>
         <div class="stat-card reveal d2">  <span class="stat-num">6</span>    <span class="stat-lbl">Servicios clave</span></div>
         <div class="stat-card reveal d3">  <span class="stat-num">∞</span>    <span class="stat-lbl">Ideas para tu marca</span></div>
       </div>
-
     </div>
   </div>
 </section>
@@ -531,11 +560,6 @@
         <h4>Estrategias Creativas</h4>
         <p>Que no solo piensan, también analizan. Estudiamos el mercado, entendemos a tu audiencia y llevamos tu marca al siguiente nivel. Porque una gran idea sin datos, es solo un deseo.</p>
       </div>
-      <!--div class="serv-card reveal d2">
-        <div class="serv-icon"><i class="fa-solid fa-clipboard-list"></i></div>
-        <h4>Asesoramiento Personalizado</h4>
-        <p>Antes de pasar presupuestos, nos gusta entender tu marca, tu negocio, tus objetivos y para eso tenemos un formulario con el cual después nos contactamos de forma personalizada para darte una mejor atención ya que cada marca y cada dueño de negocio son distintos.</p>
-      </div-->
     </div>
   </div>
 </section>
@@ -549,19 +573,19 @@
     </div>
     <div class="trabajos-grid">
       <div class="work-item reveal">
-        <img src="images/serv-foto.jpg" alt="Fotografía de Marca" />
+        <img src="images/serv-foto.jpg" alt="Fotografía de Marca - Sesión profesional para producto" />
         <div class="work-cap"><div><h5>Fotografía de Marca</h5><p>Sesión para producto</p></div></div>
       </div>
       <div class="work-item reveal d1">
-        <img src="images/serv-conte.jpg" alt="Contenido para Redes" />
+        <img src="images/serv-conte.jpg" alt="Contenido para Redes Sociales - Feed y Stories" />
         <div class="work-cap"><div><h5>Contenido para Redes</h5><p>Feed & Stories</p></div></div>
       </div>
       <div class="work-item reveal d2">
-        <img src="images/serv-brand.jpg" alt="Identidad Visual" />
+        <img src="images/serv-brand.jpg" alt="Identidad Visual - Diseño y Branding" />
         <div class="work-cap"><div><h5>Identidad Visual</h5><p>Diseño & Branding</p></div></div>
       </div>
       <div class="work-item reveal d3">
-        <img src="images/serv-web.jpg" alt="Diseño Web" />
+        <img src="images/serv-web.jpg" alt="Diseño Web - Landing page y tienda online" />
         <div class="work-cap"><div><h5>Diseño Web</h5><p>Landing & Tienda</p></div></div>
       </div>
     </div>
@@ -577,32 +601,8 @@
       <p class="body-lead" style="max-width:460px;margin:.75rem auto 0">Un equipo chico, multidisciplinario y con mucha energía. Hacé clic en la flecha para conocer a cada uno.</p>
     </div>
     <div class="equipo-grid">
-
-      <!-- Budin -->
-      <!--div class="team-card reveal d3">
-        <div class="team-avatar"><img src="images/ceo-perfil.jpg" alt="Usuario 6" /></div>
-        <div class="team-header" data-d="draw-u6">
-          <div class="team-info-wrap">
-            <p class="team-name">Budín</p>
-            <p class="team-profession">CEO</p>
-          </div>
-          <span class="team-arrow"><i class="fas fa-chevron-down"></i></span>
-        </div>
-        <div class="team-drawer" id="draw-u6">
-          <div class="team-drawer-in">
-            <span class="team-role-label">Budín</span>
-            <p class="team-bio">El CEO, no usa corbata, usa collar. Su método de trabajo: dormir la siesta estratégica y despertar con la idea brillante. Lidera con ternura y muerde los problemas de raíz.</p>
-            <div class="team-links">
-              <a href="#!" class="team-link"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="#!" class="team-link"><i class="fab fa-tiktok"></i> TikTok</a>
-            </div>
-          </div>
-        </div>
-      </div-->
-
-      <!-- Florencia -->
       <div class="team-card reveal">
-        <div class="team-avatar"><img src="images/flor-perfil.jpg" alt="Florencia" /></div>
+        <div class="team-avatar"><img src="images/flor-perfil.jpg" alt="Florencia - Fundadora y Creadora de Contenidos" /></div>
         <div class="team-header" data-d="draw-flo">
           <div class="team-info-wrap">
             <p class="team-name">Florencia</p>
@@ -621,10 +621,8 @@
           </div>
         </div>
       </div>
-
-      <!-- Matías -->
       <div class="team-card reveal d1">
-        <div class="team-avatar"><img src="images/mati-perfil.jpg" alt="Matías" /></div>
+        <div class="team-avatar"><img src="images/mati-perfil.jpg" alt="Matías - Videógrafo y Creador de Contenido" /></div>
         <div class="team-header" data-d="draw-mat">
           <div class="team-info-wrap">
             <p class="team-name">Matías</p>
@@ -643,10 +641,8 @@
           </div>
         </div>
       </div>
-
-      <!-- Evelyn -->
       <div class="team-card reveal d2">
-        <div class="team-avatar"><img src="images/eve-perfil.jpg" alt="Evelyn" /></div>
+        <div class="team-avatar"><img src="images/eve-perfil.jpg" alt="Evelyn - Fotógrafa especializada en producto y lifestyle" /></div>
         <div class="team-header" data-d="draw-eve">
           <div class="team-info-wrap">
             <p class="team-name">Evelyn</p>
@@ -665,10 +661,8 @@
           </div>
         </div>
       </div>
-
-      <!-- Lali -->
       <div class="team-card reveal d1">
-        <div class="team-avatar"><img src="images/lali-perfil.jpg" alt="Lali" /></div>
+        <div class="team-avatar"><img src="images/lali-perfil.jpg" alt="Lali - Editora Multimedia" /></div>
         <div class="team-header" data-d="draw-lali">
           <div class="team-info-wrap">
             <p class="team-name">Lali</p>
@@ -687,10 +681,8 @@
           </div>
         </div>
       </div>
-
-      <!-- Sergio -->
       <div class="team-card reveal d2">
-        <div class="team-avatar"><img src="images/sergio-perfil.jpg" alt="Sergio" /></div>
+        <div class="team-avatar"><img src="images/sergio-perfil.jpg" alt="Sergio - Diseñador Digital" /></div>
         <div class="team-header" data-d="draw-ser">
           <div class="team-info-wrap">
             <p class="team-name">Sergio</p>
@@ -709,12 +701,8 @@
           </div>
         </div>
       </div>
-
-
-
-      <!-- Magui -->
       <div class="team-card reveal d3">
-        <div class="team-avatar"><img src="images/magui-perfil.jpg" alt="Usuario 6" /></div>
+        <div class="team-avatar"><img src="images/magui-perfil.jpg" alt="Magui - Diseñadora Digital" /></div>
         <div class="team-header" data-d="draw-u7">
           <div class="team-info-wrap">
             <p class="team-name">Magui</p>
@@ -725,7 +713,7 @@
         <div class="team-drawer" id="draw-u7">
           <div class="team-drawer-in">
             <span class="team-role-label">Sobre Magui</span>
-            <p class="team-bio">Magui la diseñadora. Toma lo caótico y lo transforma en armonía. Sus armas: una tableta gráfica, café frío y la paciencia de un monje. Si algo es feo, ella lo convierte en arte. Si algo no funciona, ella lo hace brillar..</p>
+            <p class="team-bio">Magui la diseñadora. Toma lo caótico y lo transforma en armonía. Sus armas: una tableta gráfica, café frío y la paciencia de un monje. Si algo es feo, ella lo convierte en arte. Si algo no funciona, ella lo hace brillar.</p>
             <div class="team-links">
               <a href="#!" class="team-link"><i class="fab fa-instagram"></i> Instagram</a>
               <a href="#!" class="team-link"><i class="fab fa-tiktok"></i> TikTok</a>
@@ -733,10 +721,8 @@
           </div>
         </div>
       </div>
-
-      <!-- Paloma -->
       <div class="team-card reveal d3">
-        <div class="team-avatar"><img src="images/palo-perfil.jpg" alt="Usuario 6" /></div>
+        <div class="team-avatar"><img src="images/palo-perfil.jpg" alt="Paloma - Community Manager" /></div>
         <div class="team-header" data-d="draw-u8">
           <div class="team-info-wrap">
             <p class="team-name">Palo</p>
@@ -747,7 +733,7 @@
         <div class="team-drawer" id="draw-u8">
           <div class="team-drawer-in">
             <span class="team-role-label">Sobre Paloma</span>
-            <p class="team-bio">Paloma, la community manager. Vive en las trincheras de los comentarios y las historias de Instagram. Su arma secreta: el humor. Su escudo: la paciencia. Convierte haters en fans y silencios en conversaciones. Si la marca habla, es porque él le dio la voz</p>
+            <p class="team-bio">Paloma, la community manager. Vive en las trincheras de los comentarios y las historias de Instagram. Su arma secreta: el humor. Su escudo: la paciencia. Convierte haters en fans y silencios en conversaciones. Si la marca habla, es porque él le dio la voz.</p>
             <div class="team-links">
               <a href="#!" class="team-link"><i class="fab fa-instagram"></i> Instagram</a>
               <a href="#!" class="team-link"><i class="fab fa-tiktok"></i> TikTok</a>
@@ -755,7 +741,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -767,7 +752,7 @@
       <h2>¿Listo para mostrar tu marca como realmente merece?</h2>
       <p>Contanos sobre tu negocio y descubramos juntos cómo potenciar su imagen, su comunicación y todo lo que la hace diferente.</p>
       <div class="cta-btns">
-        <a href="https://api.whatsapp.com/send?phone=5491124630157&text=Hola,%20me%20comunico%20de%20la%20web%20quiero%20hacer%20crecer%20mi%20marca.%20M%C3%A1s%20info.%20Gracias!" class="btn btn-white" target="_blank"><i class="fab fa-whatsapp"></i> Escribinos por WhatsApp</a>
+        <a href="https://api.whatsapp.com/send?phone=5491124630157&text=Hola,%20me%20comunico%20de%20la%20web%20quiero%20hacer%20crecer%20mi%20marca.%20M%C3%A1s%20info.%20Gracias!" class="btn btn-white" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Escribinos por WhatsApp</a>
         <a href="#contacto" class="btn btn-ghost-rose">Ver contacto <i class="fas fa-arrow-down"></i></a>
       </div>
     </div>
@@ -785,15 +770,15 @@
     <div class="contacto-grid">
       <div class="contact-card reveal">
         <div class="contact-icon"><i class="fab fa-instagram"></i></div>
-        <div class="contact-info"><label>Instagram</label><a href="https://www.instagram.com/icondigital.ok" target="_blank">@icondigital</a></div>
+        <div class="contact-info"><label>Instagram</label><a href="https://www.instagram.com/icondigital.ok" target="_blank" rel="noopener noreferrer">@icondigital.ok</a></div>
       </div>
       <div class="contact-card reveal d1">
         <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
-        <div class="contact-info"><label>WhatsApp</label><a href="https://api.whatsapp.com/send?phone=5491124630157&text=Hola,%20me%20comunico%20de%20la%20web%20quiero%20hacer%20crecer%20mi%20marca.%20M%C3%A1s%20info.%20Gracias!" target="_blank">Escribinos directo</a></div>
+        <div class="contact-info"><label>WhatsApp</label><a href="https://api.whatsapp.com/send?phone=5491124630157&text=Hola,%20me%20comunico%20de%20la%20web%20quiero%20hacer%20crecer%20mi%20marca.%20M%C3%A1s%20info.%20Gracias!" target="_blank" rel="noopener noreferrer">Escribinos directo</a></div>
       </div>
       <div class="contact-card reveal d2">
         <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-        <div class="contact-info"><label>Email</label><a href="/cdn-cgi/l/email-protection#b9d1d6d5d8f9d0dad6d7ddd0ded0cdd8d597dad6d4"><span class="__cf_email__" data-cfemail="e38b8c8f82a38a808c8d878a848a97828fcd808c8e">icondigital@gmail.com</span></a></div>
+        <div class="contact-info"><label>Email</label><a href="mailto:icondigitalorg@gmail.com">icondigitalorg@gmail.com</a></div>
       </div>
     </div>
   </div>
@@ -804,13 +789,12 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <img src="images/logo-id.png" alt="Icon Digital" class="footer-logo-img" />
+        <img src="images/logo-id.png" alt="Icon Digital - Agencia de Marketing Digital" class="footer-logo-img" />
         <p class="footer-slogan">Manejo de redes con coherencia.</p>
         <div class="footer-socials">
-          <a href="https://www.instagram.com/icondigital.ok" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.facebook.com/people/Icon-Digital/61579964544859/?rdid=nPlh7WuauLoJVpcN&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1GZjfdiZi9%2F" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <!--a href="#!" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a-->
-          <a href="https://api.whatsapp.com/send?phone=5491124630157&text=Hola,%20me%20comunico%20de%20la%20web%20quiero%20hacer%20crecer%20mi%20marca.%20M%C3%A1s%20info.%20Gracias!" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/icondigital.ok" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.facebook.com/people/Icon-Digital/61579964544859/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://api.whatsapp.com/send?phone=5491124630157&text=Hola,%20me%20comunico%20de%20la%20web%20quiero%20hacer%20crecer%20mi%20marca.%20M%C3%A1s%20info.%20Gracias!" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
       <div>
@@ -841,85 +825,13 @@
 <!-- Scroll to top -->
 <a id="scroll-top" href="#hero" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></a>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-  /* ── Sidebar ── */
-  const toggle  = document.getElementById('nav-toggle');
-  const sidebar = document.getElementById('sidebar');
-  const overlay = document.getElementById('sidebar-overlay');
-
-  const openSB  = () => { sidebar.classList.add('open'); overlay.classList.add('open'); toggle.innerHTML = '<i class="fas fa-times"></i>'; };
-  const closeSB = () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); toggle.innerHTML = '<i class="fas fa-bars"></i>'; };
-
-  toggle.addEventListener('click', () => sidebar.classList.contains('open') ? closeSB() : openSB());
-  overlay.addEventListener('click', closeSB);
-
-  /* ── Anchor scroll ── */
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const href = this.getAttribute('href');
-      if (!href || href === '#' || href === '#!') return;
-      const target = document.querySelector(href);
-      if (!target) return;
-      e.preventDefault();
-      closeSB();
-      setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
-    });
-  });
-
-  /* ── Scroll-to-top ── */
-  const scrollBtn = document.getElementById('scroll-top');
-  window.addEventListener('scroll', () => {
-    scrollBtn.style.display = window.scrollY > 320 ? 'flex' : 'none';
-  });
-
-  /* ── Team accordion ── */
-  document.querySelectorAll('.team-header').forEach(header => {
-    header.addEventListener('click', function() {
-      const drawer = document.getElementById(this.dataset.d);
-      const isOpen = drawer.classList.contains('open');
-
-      // close all
-      document.querySelectorAll('.team-drawer.open').forEach(d => {
-        d.classList.remove('open');
-        const h = d.previousElementSibling;
-        h.classList.remove('active');
-      });
-
-      if (!isOpen) {
-        drawer.classList.add('open');
-        this.classList.add('active');
-      }
-    });
-  });
-
-  /* ── Reveal on scroll ── */
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        e.target.classList.add('visible');
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-  /* Fallback: si el observer no dispara, mostrar todo igual */
-  setTimeout(() => {
-    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
-      el.classList.add('visible');
-    });
-  }, 1200);
-
-</script>
-<!-- Botón flotante VER PORTFOLIO (esquina inferior izquierda - más grande y legible) -->
+<!-- Botón flotante VER PORTFOLIO -->
 <a href="servicios.html" class="floating-portfolio-btn">
   <i class="fas fa-images"></i> 
   <span>Ver portfolio</span>
 </a>
 
 <style>
-/* Botón flotante portfolio - versión elegante (IZQUIERDA) */
 .floating-portfolio-btn {
   position: fixed;
   bottom: 28px;
@@ -944,7 +856,6 @@
   cursor: pointer;
   overflow: hidden;
 }
-
 .floating-portfolio-btn::before {
   content: '';
   position: absolute;
@@ -955,11 +866,9 @@
   background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
   transition: left 0.5s ease;
 }
-
 .floating-portfolio-btn:hover::before {
   left: 100%;
 }
-
 .floating-portfolio-btn:hover {
   transform: translateY(-6px) scale(1.02);
   background: var(--dark);
@@ -967,25 +876,19 @@
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.3);
   gap: 14px;
 }
-
 .floating-portfolio-btn:hover i {
   transform: scale(1.15) rotate(5deg);
 }
-
 .floating-portfolio-btn i {
   transition: all 0.3s cubic-bezier(0.34, 1.2, 0.64, 1);
   font-size: 1rem;
 }
-
 .floating-portfolio-btn span {
   transition: transform 0.2s ease;
 }
-
 .floating-portfolio-btn:hover span {
   transform: translateX(2px);
 }
-
-/* Responsive: en mobile se mantiene legible */
 @media (max-width: 768px) {
   .floating-portfolio-btn {
     bottom: 20px;
@@ -994,11 +897,7 @@
     font-size: 0.85rem;
     gap: 10px;
   }
-  .floating-portfolio-btn i {
-    font-size: 0.95rem;
-  }
 }
-
 @media (max-width: 480px) {
   .floating-portfolio-btn {
     bottom: 16px;
@@ -1007,10 +906,69 @@
     font-size: 0.85rem;
     gap: 8px;
   }
-  .floating-portfolio-btn i {
-    font-size: 0.9rem;
-  }
 }
 </style>
+
+<script>
+  const toggle = document.getElementById('nav-toggle');
+  const sidebar = document.getElementById('sidebar');
+  const overlay = document.getElementById('sidebar-overlay');
+
+  const openSB = () => { sidebar.classList.add('open'); overlay.classList.add('open'); toggle.innerHTML = '<i class="fas fa-times"></i>'; };
+  const closeSB = () => { sidebar.classList.remove('open'); overlay.classList.remove('open'); toggle.innerHTML = '<i class="fas fa-bars"></i>'; };
+
+  toggle.addEventListener('click', () => sidebar.classList.contains('open') ? closeSB() : openSB());
+  overlay.addEventListener('click', closeSB);
+
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (!href || href === '#' || href === '#!') return;
+      const target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      closeSB();
+      setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60);
+    });
+  });
+
+  const scrollBtn = document.getElementById('scroll-top');
+  window.addEventListener('scroll', () => {
+    scrollBtn.style.display = window.scrollY > 320 ? 'flex' : 'none';
+  });
+
+  document.querySelectorAll('.team-header').forEach(header => {
+    header.addEventListener('click', function() {
+      const drawer = document.getElementById(this.dataset.d);
+      const isOpen = drawer.classList.contains('open');
+      document.querySelectorAll('.team-drawer.open').forEach(d => {
+        d.classList.remove('open');
+        const h = d.previousElementSibling;
+        h.classList.remove('active');
+      });
+      if (!isOpen) {
+        drawer.classList.add('open');
+        this.classList.add('active');
+      }
+    });
+  });
+
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  setTimeout(() => {
+    document.querySelectorAll('.reveal:not(.visible)').forEach(el => {
+      el.classList.add('visible');
+    });
+  }, 1200);
+</script>
 </body>
 </html>
