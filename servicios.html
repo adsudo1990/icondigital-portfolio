@@ -36,7 +36,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    /* ===== TU CSS ACTUAL COMPLETO (copia exactamente igual) ===== */
+    /* ===== TU CSS ACTUAL COMPLETO ===== */
     :root {
       --dark:   #303030;
       --rose:   #dc7090;
@@ -51,7 +51,7 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 20px; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
     body { font-family: var(--ff-b); color: var(--dark); background: var(--white); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
     img  { display: block; max-width: 100%; height: auto; }
     a    { color: inherit; text-decoration: none; }
@@ -227,6 +227,19 @@
     .video-item .item-overlay i {
       background: rgba(220,112,144,0.8);
       font-size: 1.4rem;
+    }
+
+    /* ===== SECCIÓN EDICIÓN DE VIDEO ===== */
+    #edicion-video .masonry-grid {
+      column-count: 2;
+    }
+    #edicion-video .masonry-item {
+      aspect-ratio: 16/9;
+    }
+    #edicion-video .masonry-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .modal {
@@ -421,12 +434,15 @@
 
     @media (max-width: 991px) {
       .masonry-grid { column-count: 2; }
+      #edicion-video .masonry-grid { column-count: 2; }
       .brands-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 767px) {
       section { padding: 3rem 0; }
       .masonry-grid { column-count: 1; }
+      #edicion-video .masonry-grid { column-count: 1; }
+      #edicion-video .masonry-item { aspect-ratio: 16/9; }
       .brands-grid { grid-template-columns: repeat(2, 1fr); }
       .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
       .footer-socials { justify-content: center; }
@@ -599,6 +615,36 @@
       <div class="masonry-item">
         <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-5.png" alt="Diseño campaña Concesionaria Kawasaki" loading="lazy">
         <div class="item-overlay"><span class="item-cat">Diseño Campaña</span><h4>Concesionaria Kawasaki</h4><i class="fas fa-expand"></i></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 4. EDICIÓN DE VIDEO ========== -->
+<section id="edicion-video" class="portfolio-section">
+  <div class="container">
+    <div class="sec-header" style="text-align: center;">
+      <span class="label">04</span>
+      <h2 class="section-title">Edición de Video</h2>
+      <p class="section-desc">Reels, promos y contenido audiovisual editado con calidad y estilo.</p>
+    </div>
+
+    <div class="masonry-grid" id="video-grid">
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-1.mp4" data-video-title="Reel Promocional">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-1-thumb.jpg" alt="Reel promocional editado" loading="lazy" onerror="this.src='https://placehold.co/800x450/dc7090/ffffff?text=Video+Editado+1'">
+        <div class="item-overlay"><span class="item-cat">Reel</span><h4>Reel Promocional</h4><i class="fas fa-play-circle"></i></div>
+      </div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-2.mp4" data-video-title="Story Dinámica">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-2-thumb.jpg" alt="Story dinámica editada" loading="lazy" onerror="this.src='https://placehold.co/800x450/dc7090/ffffff?text=Video+Editado+2'">
+        <div class="item-overlay"><span class="item-cat">Story</span><h4>Story Dinámica</h4><i class="fas fa-play-circle"></i></div>
+      </div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-3.mp4" data-video-title="Video Producto">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-3-thumb.jpg" alt="Video producto editado" loading="lazy" onerror="this.src='https://placehold.co/800x450/dc7090/ffffff?text=Video+Editado+3'">
+        <div class="item-overlay"><span class="item-cat">Producto</span><h4>Video Producto</h4><i class="fas fa-play-circle"></i></div>
+      </div>
+      <div class="masonry-item video-item" data-video-url="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-4.mp4" data-video-title="Tutorial Rápido">
+        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-4-thumb.jpg" alt="Tutorial rápido editado" loading="lazy" onerror="this.src='https://placehold.co/800x450/dc7090/ffffff?text=Video+Editado+4'">
+        <div class="item-overlay"><span class="item-cat">Tutorial</span><h4>Tutorial Rápido</h4><i class="fas fa-play-circle"></i></div>
       </div>
     </div>
   </div>
@@ -812,7 +858,13 @@
   let currentService = '';
   
   function getVisibleItemsFromSection(sectionId) {
-    const grid = document.getElementById(`${sectionId}-grid`);
+    const gridMap = {
+      'foto': 'foto-grid',
+      'contenido': 'contenido-grid',
+      'diseno': 'diseno-grid',
+      'video': 'video-grid'
+    };
+    const grid = document.getElementById(gridMap[sectionId]);
     if (!grid) return [];
     const items = [];
     grid.querySelectorAll('.masonry-item').forEach(item => {
@@ -912,9 +964,15 @@
   });
   
   function attachItemClickHandlers() {
-    const sections = ['foto', 'contenido', 'diseno'];
+    const sections = ['foto', 'contenido', 'diseno', 'video'];
     sections.forEach(service => {
-      const grid = document.getElementById(`${service}-grid`);
+      const gridMap = {
+        'foto': 'foto-grid',
+        'contenido': 'contenido-grid',
+        'diseno': 'diseno-grid',
+        'video': 'video-grid'
+      };
+      const grid = document.getElementById(gridMap[service]);
       if (!grid) return;
       grid.querySelectorAll('.masonry-item').forEach((item, idx) => {
         const newItem = item.cloneNode(true);

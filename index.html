@@ -86,7 +86,7 @@
   </script>
 
   <style>
-    /* ===== TU CSS ACTUAL COMPLETO (copia exactamente igual) ===== */
+    /* ===== TU CSS ACTUAL COMPLETO ===== */
     :root {
       --dark:   #303030;
       --rose:   #dc7090;
@@ -252,9 +252,25 @@
     .serv-card h4 { font-family: var(--ff-h); font-size: 1.35rem; font-weight: 600; color: var(--white); margin-bottom: .75rem; position: relative; z-index: 1; }
     .serv-card p  { font-size: .9rem; color: rgba(255,255,255,.55); line-height: 1.78; position: relative; z-index: 1; }
 
+    /* Link dentro de serv-card */
+    .serv-card a {
+      display: block;
+      color: inherit;
+      text-decoration: none;
+    }
+    .serv-card a:hover h4 {
+      color: var(--rose);
+    }
+
     #trabajos { background: var(--blush); }
-    .trabajos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .85rem; }
+    .trabajos-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: .85rem; }
     .work-item { position: relative; border-radius: 16px; overflow: hidden; aspect-ratio: 3/4; cursor: pointer; }
+    .work-item a {
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
     .work-bg { position: absolute; inset: 0; background: var(--grad, linear-gradient(135deg,#dc7090,#a04060)); }
     .work-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
     .work-item:hover img { transform: scale(1.07); }
@@ -355,7 +371,6 @@
       margin-bottom: .5rem;
       display: block;
     }
-    /* === NUEVO ESTILO PARA EL SCROLL DEL TEXTO === */
     .team-bio-scroll {
       max-height: 120px;
       overflow-y: auto;
@@ -377,7 +392,6 @@
       background: var(--rose);
       border-radius: 8px;
     }
-    /* Fin nuevo estilo */
     .team-links { display: flex; flex-wrap: wrap; gap: .45rem; }
     .team-link {
       display: inline-flex; align-items: center; gap: .3rem;
@@ -453,7 +467,7 @@
       section { padding: 5rem 0; }
       .about-grid     { grid-template-columns: 1fr; gap: 2.5rem; }
       .servicios-grid { grid-template-columns: 1fr 1fr; }
-      .trabajos-grid  { grid-template-columns: repeat(2, 1fr); }
+      .trabajos-grid  { grid-template-columns: repeat(3, 1fr); }
       .equipo-grid    { grid-template-columns: repeat(2, 1fr); }
       .contacto-grid  { grid-template-columns: 1fr 1fr; }
       .footer-grid    { grid-template-columns: 1fr 1fr; }
@@ -522,6 +536,7 @@
       <p class="hero-sub">Nos ocupamos de que cada imagen, cada pieza de contenido y cada detalle reflejen eso que hace única a tu marca</p>
       <div class="hero-ctas">
         <a href="#servicios" class="btn btn-rose">Nuestros servicios <i class="fas fa-arrow-right"></i></a>
+        <a href="servicios.html"  class="btn btn-ghost-light"><i class="fas fa-images"></i> Portfolio</a>
         <a href="#contacto"  class="btn btn-ghost-light">Hablemos <i class="fas fa-comments"></i></a>
       </div>
     </div>
@@ -558,29 +573,39 @@
     </div>
     <div class="servicios-grid">
       <div class="serv-card reveal">
-        <div class="serv-icon"><i class="fas fa-camera"></i></div>
-        <h4>Fotografía</h4>
-        <p>Tomamos imágenes que detienen el scroll y comunican sin una sola palabra.</p>
+        <a href="servicios.html#fotografia">
+          <div class="serv-icon"><i class="fas fa-camera"></i></div>
+          <h4>Fotografía</h4>
+          <p>Tomamos imágenes que detienen el scroll y comunican sin una sola palabra.</p>
+        </a>
       </div>
       <div class="serv-card reveal d1">
-        <div class="serv-icon"><i class="fas fa-circle-play"></i></div>
-        <h4>Creación de Contenidos</h4>
-        <p>Nos encargamos de todo el proceso creativo, planificación, calendarios, guiones y tomas.</p>
+        <a href="servicios.html#creacion-contenidos">
+          <div class="serv-icon"><i class="fas fa-circle-play"></i></div>
+          <h4>Creación de Contenidos</h4>
+          <p>Nos encargamos de todo el proceso creativo, planificación, calendarios, guiones y tomas.</p>
+        </a>
       </div>
       <div class="serv-card reveal d2">
-        <div class="serv-icon"><i class="fas fa-pen-ruler"></i></div>
-        <h4>Diseño Gráfico & Web</h4>
-        <p>Identidades visuales sólidas, materiales de comunicación y sitios web que reflejan la personalidad de tu marca.</p>
+        <a href="servicios.html#diseno-grafico-web">
+          <div class="serv-icon"><i class="fas fa-pen-ruler"></i></div>
+          <h4>Diseño Gráfico & Web</h4>
+          <p>Identidades visuales sólidas, materiales de comunicación y sitios web que reflejan la personalidad de tu marca.</p>
+        </a>
       </div>
       <div class="serv-card reveal d2">
-        <div class="serv-icon"><i class="fa-solid fa-video"></i></div>
-        <h4>Edición de Vídeo</h4>
-        <p>Cada creación de contenido se entrega con material editado, de forma dinámica y personalizada a tu marca.</p>
+        <a href="servicios.html#edicion-video">
+          <div class="serv-icon"><i class="fa-solid fa-video"></i></div>
+          <h4>Edición de Vídeo</h4>
+          <p>Cada creación de contenido se entrega con material editado, de forma dinámica y personalizada a tu marca.</p>
+        </a>
       </div>
       <div class="serv-card reveal d2">
-        <div class="serv-icon"><i class="fa-solid fa-chess-knight"></i></div>
-        <h4>Estrategias Creativas</h4>
-        <p>Que no solo piensan, también analizan. Estudiamos el mercado, entendemos a tu audiencia y llevamos tu marca al siguiente nivel. Porque una gran idea sin datos, es solo un deseo.</p>
+        <a href="servicios.html#diseno-grafico-web">
+          <div class="serv-icon"><i class="fa-solid fa-chess-knight"></i></div>
+          <h4>Estrategias Creativas</h4>
+          <p>Que no solo piensan, también analizan. Estudiamos el mercado, entendemos a tu audiencia y llevamos tu marca al siguiente nivel. Porque una gran idea sin datos, es solo un deseo.</p>
+        </a>
       </div>
     </div>
   </div>
@@ -595,20 +620,34 @@
     </div>
     <div class="trabajos-grid">
       <div class="work-item reveal">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-1.jpg" alt="Fotografía de Marca - Sesión profesional para producto" />
-        <div class="work-cap"><div><h5>Fotografía de Marca</h5><p>Sesión para producto</p></div></div>
+        <a href="servicios.html#fotografia">
+          <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/fotografia-1.jpg" alt="Fotografía de Marca - Sesión profesional para producto" />
+          <div class="work-cap"><div><h5>Fotografía de Marca</h5><p>Sesión para producto</p></div></div>
+        </a>
       </div>
       <div class="work-item reveal d1">
-        <img src="images/serv-conte.jpg" alt="Contenido para Redes Sociales - Feed y Stories" />
-        <div class="work-cap"><div><h5>Contenido para Redes</h5><p>Feed & Stories</p></div></div>
+        <a href="servicios.html#creacion-contenidos">
+          <img src="images/serv-conte.jpg" alt="Contenido para Redes Sociales - Feed y Stories" />
+          <div class="work-cap"><div><h5>Contenido para Redes</h5><p>Feed & Stories</p></div></div>
+        </a>
       </div>
       <div class="work-item reveal d2">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/brand-serv.jpg" alt="Identidad Visual - Diseño y Branding" />
-        <div class="work-cap"><div><h5>Identidad Visual</h5><p>Diseño & Branding</p></div></div>
+        <a href="servicios.html#diseno-grafico-web">
+          <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/brand-serv.jpg" alt="Identidad Visual - Diseño y Branding" />
+          <div class="work-cap"><div><h5>Identidad Visual</h5><p>Diseño & Branding</p></div></div>
+        </a>
       </div>
       <div class="work-item reveal d3">
-        <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-6.png" alt="Diseño Web - Landing page y tienda online" />
-        <div class="work-cap"><div><h5>Diseño Web</h5><p>Landing & Tienda</p></div></div>
+        <a href="servicios.html#diseno-grafico-web">
+          <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/diseno-6.png" alt="Diseño Web - Landing page y tienda online" />
+          <div class="work-cap"><div><h5>Diseño Web</h5><p>Landing & Tienda</p></div></div>
+        </a>
+      </div>
+      <div class="work-item reveal d4">
+        <a href="servicios.html#edicion-video">
+          <img src="https://pub-9e93c1d149f9435cbb6bc1e7a068f42d.r2.dev/edicion-video-thumb.jpg" alt="Edición de Video - Reels y contenido audiovisual" onerror="this.src='https://placehold.co/600x800/dc7090/ffffff?text=Edici%C3%B3n+Video'" />
+          <div class="work-cap"><div><h5>Edición de Video</h5><p>Reels & Contenido Audiovisual</p></div></div>
+        </a>
       </div>
     </div>
   </div>
@@ -641,10 +680,6 @@
               Lo que comenzó como un emprendimiento personal terminó convirtiéndose en un equipo que hoy acompaña a marcas de diferentes rubros en su crecimiento digital.
               Esa experiencia es la que guía cada proyecto: entender que detrás de cada negocio hay personas que apuestan por crecer. Porque así como Icon evolucionó desde cero hasta convertirse en una agencia, su mayor satisfacción es ayudar a que otras marcas recorran ese mismo camino.
             </div>
-            <div class="team-links">
-              <a href="#!" class="team-link"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="#!" class="team-link"><i class="fab fa-tiktok"></i> TikTok</a>
-            </div>
           </div>
         </div>
       </div>
@@ -666,10 +701,6 @@
               Participa en cada proyecto desde la grabación hasta la entrega final del contenido, cuidando cada detalle para que el resultado refleje la identidad de la marca.
               Además, su perfil como programador aporta una mirada técnica que complementa el trabajo creativo del equipo, ayudando a que las ideas no solo se vean bien, sino que también funcionen.
             </div>
-            <div class="team-links">
-              <a href="#!" class="team-link"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="#!" class="team-link"><i class="fab fa-tiktok"></i> TikTok</a>
-            </div>
           </div>
         </div>
       </div>
@@ -688,10 +719,6 @@
             <span class="team-role-label">Sobre Evelyn</span>
             <div class="team-bio-scroll">
               Evelyn se sumó a Icon Digital compartiendo la misma convicción que impulsó su crecimiento desde el primer día: ayudar a que las marcas muestren todo su potencial. A través de la fotografía, busca destacar aquello que hace único a cada negocio, transformando productos, espacios y servicios en imágenes que transmiten confianza y profesionalismo.Porque detrás de cada foto no hay solo una cámara, sino una oportunidad para que una marca se vea como realmente merece verse.
-            </div>
-            <div class="team-links">
-              <a href="#!" class="team-link"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="#!" class="team-link"><i class="fab fa-tiktok"></i> TikTok</a>
             </div>
           </div>
         </div>
@@ -712,10 +739,6 @@
             <div class="team-bio-scroll">
               Lali forma parte del equipo de Icon Digital y es quien está detrás de la edición de los videos que ven nuestros clientes y sus comunidades.Con atención al detalle y una mirada creativa, transforma horas de grabación en contenido pensado para captar la atención, transmitir un mensaje y representar a cada marca de la mejor manera.
             </div>
-            <div class="team-links">
-              <a href="#!" class="team-link"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="#!" class="team-link"><i class="fab fa-tiktok"></i> TikTok</a>
-            </div>
           </div>
         </div>
       </div>
@@ -735,10 +758,6 @@
             <div class="team-bio-scroll">
               Sergio diseña todo lo que se ve: desde el logo hasta el sitio web. Su enfoque combina estética y funcionalidad para crear piezas que no solo se ven bien, sino que también funcionan y comunican con claridad.
             </div>
-            <div class="team-links">
-              <a href="#!" class="team-link"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="#!" class="team-link"><i class="fab fa-tiktok"></i> TikTok</a>
-            </div>
           </div>
         </div>
       </div>
@@ -757,10 +776,6 @@
             <span class="team-role-label">Sobre Paloma</span>
             <div class="team-bio-scroll">
               Paloma forma parte del equipo de Community Management de Icon Digital y trabaja junto a Flor en el seguimiento y gestión de las marcas que acompañamos.Es una segunda mirada en cada proyecto, participando en la planificación, el análisis y la gestión diaria de las cuentas para asegurar que cada detalle esté alineado con los objetivos de cada negocio.Su trabajo ayuda a que las ideas se transformen en acciones concretas y que cada marca mantenga una comunicación cercana, profesional y coherente.
-            </div>
-            <div class="team-links">
-              <a href="#!" class="team-link"><i class="fab fa-instagram"></i> Instagram</a>
-              <a href="#!" class="team-link"><i class="fab fa-tiktok"></i> TikTok</a>
             </div>
           </div>
         </div>
@@ -834,10 +849,11 @@
       <div>
         <p class="footer-col-title">Servicios</p>
         <ul class="footer-nav">
-          <li><a href="#servicios">Fotografía</a></li>
-          <li><a href="#servicios">Creación de Contenidos</a></li>
-          <li><a href="#servicios">Diseño Gráfico</a></li>
-          <li><a href="#servicios">Diseño Web</a></li>
+          <li><a href="servicios.html#fotografia">Fotografía</a></li>
+          <li><a href="servicios.html#creacion-contenidos">Creación de Contenidos</a></li>
+          <li><a href="servicios.html#diseno-grafico-web">Diseño Gráfico</a></li>
+          <li><a href="servicios.html#diseno-grafico-web">Diseño Web</a></li>
+          <li><a href="servicios.html#edicion-video">Edición Video</a></li>
         </ul>
       </div>
     </div>
@@ -848,12 +864,6 @@
 
 <!-- Scroll to top -->
 <a id="scroll-top" href="#hero" aria-label="Volver arriba"><i class="fas fa-chevron-up"></i></a>
-
-<!-- Botón flotante VER PORTFOLIO -->
-<a href="servicios.html" class="floating-portfolio-btn">
-  <i class="fas fa-images"></i> 
-  <span>Ver portfolio</span>
-</a>
 
 <style>
 .floating-portfolio-btn {
